@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foxess H3 Tageswerte und Gesamtwerte</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foxess.js') }}"></script>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="PV">PV-Ansicht</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="BAT">Batterie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="TAG">Tageswerte</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/">Alle Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="HMIP">Homematic</a>
+        </li>
+    </ul>
+    <div class="container-fluid bg-primary text-center text-white">
+        <h1>Tages- und Gesamtübersicht</h1>
+        <button onclick="getDataFromServer()">Lese Daten</button>
+    </div>
+    <div class="container-fluid bg-secondary text-white">
+        <div class="row">
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>SOC</td>
+                            <td id="foxess_inv1_battery_soc">SOC</td>
+                        </tr>
+                        <tr>
+                            <td>SOH</td>
+                            <td id="foxess_inv1_battery_soh">SOH</td>
+                        </tr>
+                        <tr>
+                            <td>Kapazität</td>
+                            <td id="foxess_inv1_battery_capacity">Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Spannung</td>
+                            <td id="foxess_inv1_battery_voltage">Spannung</td>
+                        </tr>
+                        <tr>
+                            <td>Strom</td>
+                            <td id="foxess_inv1_battery_current">Strom</td>
+                        </tr>
+                        <tr>
+                            <td>Leistung</td>
+                            <td id="foxess_inv1_battery_power">Leistung</td>
+                        </tr>
+                        <tr>
+                            <td>Temperatur</td>
+                            <td id="foxess_inv1_battery_temperature">Temperatur</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <thead thead class="thead-dark">
+                        <tr>
+                            <th></th>
+                            <th>Tageswert</th>
+                            <th>Gesamtwert</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Batterie Laden</td>
+                            <td id="foxess_inv1_daily_charge_energy">Daily</td>
+                            <td id="foxess_inv1_total_charge_energy">Total</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Entladen</td>
+                            <td id="foxess_inv1_daily_discharge_energy">Daily</td>
+                            <td id="foxess_inv1_total_discharge_energy">Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        getDataFromServer()
+        let timer = setInterval(function() {
+            getDataFromServer();
+        }, 30000);
+    </script>
+</body>
+</html>

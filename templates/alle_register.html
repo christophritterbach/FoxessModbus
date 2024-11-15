@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foxess H3 Register-Übersicht</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foxess.js') }}"></script>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="PV">PV-Ansicht</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="BAT">Batterie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="TAG">Tageswerte</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/">Alle Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="HMIP">Homematic</a>
+        </li>
+    </ul>
+    <div class="container-fluid bg-primary text-center text-white">
+        <h1>Register-Übersicht</h1>
+        <button onclick="getAllDataFromServer()">Lese Daten</button>
+    </div>
+    <div class="container-fluid bg-secondary text-white">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr><th>Name</th><th>Wert</th><th>Masseinheit</th></tr>
+            </thead>
+            <tbody id="all_sensors">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        getAllDataFromServer()
+    </script>
+</body>
+</html>

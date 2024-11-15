@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foxess H3 Tageswerte und Gesamtwerte</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foxess.js') }}"></script>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="PV">PV-Ansicht</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="BAT">Batterie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="TAG">Tageswerte</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/">Alle Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="HMIP">Homematic</a>
+        </li>
+    </ul>
+    <div class="container-fluid bg-primary text-center text-white">
+        <h1>Tages- und Gesamtübersicht</h1>
+        <button onclick="getDataFromServer()">Lese Daten</button>
+    </div>
+    <div class="container-fluid bg-secondary text-white">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-bordered">
+                    <thead thead class="thead-dark">
+                        <tr>
+                            <th></th>
+                            <th>Tageswert</th>
+                            <th>Gesamtwert</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PV-Energie</td>
+                            <td id="foxess_inv1_daily_pv_energy">Daily</td>
+                            <td id="foxess_inv1_total_pv_energy">Total</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Laden</td>
+                            <td id="foxess_inv1_daily_charge_energy">Daily</td>
+                            <td id="foxess_inv1_total_charge_energy">Total</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Entladen</td>
+                            <td id="foxess_inv1_daily_discharge_energy">Daily</td>
+                            <td id="foxess_inv1_total_discharge_energy">Total</td>
+                        </tr>
+                        <tr>
+                            <td>Eingespeiste Energie (Meter)</td>
+                            <td id="foxess_sm1_daily_feedin_energy">Daily</td>
+                            <td id="foxess_sm1_total_feedin_energy">Total</td>
+                        </tr>
+                        <tr>
+                            <td>Bezogene Energie (Meter)</td>
+                            <td id="foxess_sm1_daily_consumption_energy">Daily</td>
+                            <td id="foxess_sm1_total_consumption_energy">Total</td>
+                        </tr>
+                        <tr>
+                            <td>Eingespeiste Energie (Homematic)</td>
+                            <td id="homematic_daily_feedin_energy">Daily</td>
+                            <td id="homematic_total_feedin_energy">Total</td>
+                        </tr>
+                        <tr>
+                            <td>Bezogene Energie (Homematic)</td>
+                            <td id="homematic_daily_consumption_energy">Daily</td>
+                            <td id="homematic_total_consumption_energy">Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        getDataFromServer()
+        let timer = setInterval(function() {
+            getDataFromServer();
+            leseHmipWertVomServer('homematic_daily_feedin_energy');
+            leseHmipWertVomServer('homematic_total_feedin_energy');
+            leseHmipWertVomServer('homematic_daily_consumption_energy');
+            leseHmipWertVomServer('homematic_total_consumption_energy');
+        }, 30000);
+    </script>
+</body>
+</html>

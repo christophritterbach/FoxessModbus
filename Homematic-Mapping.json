@@ -1,0 +1,416 @@
+{
+    "CCU Address": "localhost",
+    "CCU Port": "8181",
+    "CCU User": "user",
+    "CCU Password": "password",
+    "Homematic Status": [
+        {
+            "unique_id": "strom_akt_leistung",
+            "name": "Akuelle Leistung Strom",
+            "address": "HmIP-RF.003FA0C9B1BFEF:1.POWER",
+            "data_type": "float",
+            "precision": 1,
+            "scale": 1,
+            "unit_of_measurement": "W",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "strom_bezug_total",
+            "name": "Strom Begzug (gesamt)",
+            "address": "HmIP-RF.003FA0C9B1BFEF:2.ENERGY_COUNTER",
+            "data_type": "float",
+            "precision": 3,
+            "scale": 0.001,
+            "unit_of_measurement": "kWh",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "strom_einspeisung_total",
+            "name": "Strom Einspeisung (gesamt)",
+            "address": "HmIP-RF.003FA0C9B1BFEF:4.ENERGY_COUNTER",
+            "data_type": "float",
+            "precision": 3,
+            "scale": 0.001,
+            "unit_of_measurement": "kWh",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "homematic_total_consumption_energy",
+            "name": "Strom Begzug (gesamt)",
+            "address": "HmIP-RF.003FA0C9B1BFEF:2.ENERGY_COUNTER",
+            "data_type": "float",
+            "precision": 3,
+            "scale": 0.001,
+            "unit_of_measurement": "kWh",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "homematic_daily_consumption_energy",
+            "name": "Strom Bezug (heute)",
+            "address": "Strom_Bezug_heute",
+            "data_type": "float",
+            "precision": 3,
+            "scale": 0.001,
+            "unit_of_measurement": "kWh",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "homematic_total_feedin_energy",
+            "name": "Strom Einspeisung (gesamt)",
+            "address": "HmIP-RF.003FA0C9B1BFEF:4.ENERGY_COUNTER",
+            "data_type": "float",
+            "precision": 3,
+            "scale": 0.001,
+            "unit_of_measurement": "kWh",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "homematic_daily_feedin_energy",
+            "name": "Strom Einspeisung (heute)",
+            "address": "Strom_Einspeisung_heute",
+            "data_type": "float",
+            "precision": 3,
+            "scale": 0.001,
+            "unit_of_measurement": "kWh",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_eg_wohnzimmer",
+            "name": "Wohnzimmer Temperatur",
+            "address": "HmIP-RF.000A9F2989BC26:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_eg_kueche",
+            "name": "Küche Temperatur",
+            "address": "HmIP-RF.000A9F2989BCC4:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_eg_treppe",
+            "name": "Treppenhaus EG Temperatur",
+            "address": "HmIP-RF.000A9F29A34453:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_og_schlafzimmer",
+            "name": "Schlafzimmer Temperatur",
+            "address": "HmIP-RF.000A9F2989BC91:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_og_kinderzimmer",
+            "name": "Jugendzimmer Temperatur",
+            "address": "HmIP-RF.000A9F2989BC89:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_og_badezimmer",
+            "name": "Badezimmerzimmer Temperatur",
+            "address": "HmIP-RF.000A9F2989BC3D:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_og_badezimmer_h",
+            "name": "Badezimmer (Handtuchhalter) Temperatur",
+            "address": "HmIP-RF.002A9F298CA725:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_dg_buero_g_s",
+            "name": "Büro (groß), süd Temperatur",
+            "address": "HmIP-RF.002A9F298CA2DB:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_dg_buero_g_n",
+            "name": "Büro (groß), nord Temperatur",
+            "address": "HmIP-RF.002A9F298CA708:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_ist_dg_buero_k_n",
+            "name": "Büro (klein) Temperatur",
+            "address": "HmIP-RF.002A9F298CA717:1.ACTUAL_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_eg_wohnzimmer",
+            "name": "Wohnzimmer Temperatur SOLL",
+            "address": "HmIP-RF.000A9F2989BC26:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_eg_kueche",
+            "name": "Küche Temperatur SOLL",
+            "address": "HmIP-RF.000A9F2989BCC4:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_eg_treppe",
+            "name": "Treppenhaus EG Temperatur SOLL",
+            "address": "HmIP-RF.000A9F29A34453:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_og_schlafzimmer",
+            "name": "Schlafzimmer Temperatur SOLL",
+            "address": "HmIP-RF.000A9F2989BC91:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_og_kinderzimmer",
+            "name": "Jugendzimmer Temperatur SOLL",
+            "address": "HmIP-RF.000A9F2989BC89:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_og_badezimmer",
+            "name": "Badezimmerzimmer Temperatur SOLL",
+            "address": "HmIP-RF.000A9F2989BC3D:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_og_badezimmer_h",
+            "name": "Badezimmer (Handtuchhalter) Temperatur SOLL",
+            "address": "HmIP-RF.002A9F298CA725:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_dg_buero_g_s",
+            "name": "Büro (groß), süd Temperatur SOLL",
+            "address": "HmIP-RF.002A9F298CA2DB:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_dg_buero_g_n",
+            "name": "Büro (groß), nord Temperatur SOLL",
+            "address": "HmIP-RF.002A9F298CA708:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "temp_soll_dg_buero_k_n",
+            "name": "Büro (klein) Temperatur SOLL",
+            "address": "HmIP-RF.002A9F298CA717:1.SET_POINT_TEMPERATURE",
+            "data_type": "float",
+            "unit_of_measurement": "°C",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "feuchte_eg_wohnzimmer",
+            "name": "Wohnzimmer Luftfeuchtigkeit",
+            "address": "HmIP-RF.000A9F2989BC26:1.HUMIDITY",
+            "data_type": "float",
+            "unit_of_measurement": "%",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "feuchte_eg_kueche",
+            "name": "Küche Luftfeuchtigkeit",
+            "address": "HmIP-RF.000A9F2989BCC4:1.HUMIDITY",
+            "data_type": "float",
+            "unit_of_measurement": "%",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "feuchte_eg_treppe",
+            "name": "Treppenhaus EG Luftfeuchtigkeit",
+            "address": "HmIP-RF.000A9F29A34453:1.HUMIDITY",
+            "data_type": "float",
+            "unit_of_measurement": "%",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "feuchte_og_schlafzimmer",
+            "name": "Schlafzimmer Luftfeuchtigkeit",
+            "address": "HmIP-RF.000A9F2989BC91:1.HUMIDITY",
+            "data_type": "float",
+            "unit_of_measurement": "%",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "feuchte_og_kinderzimmer",
+            "name": "Jugendzimmer Luftfeuchtigkeit",
+            "address": "HmIP-RF.000A9F2989BC89:1.HUMIDITY",
+            "data_type": "float",
+            "unit_of_measurement": "%",
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "feuchte_og_badezimmer",
+            "name": "Badezimmerzimmer Luftfeuchtigkeit",
+            "address": "HmIP-RF.000A9F2989BC3D:1.HUMIDITY",
+            "data_type": "float",
+            "unit_of_measurement": "%",
+            "device_class": "DP"
+        },
+         {
+            "unique_id": "rollade_dg_seitenfenster",
+            "name": "Büro Seitenfenster",
+            "address": "HmIP-RF.00369F2997657D:3.LEVEL",
+            "data_type": "float",
+            "unit_of_measurement": "% offen",
+            "scale": 100,
+            "precision": 0,
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "rollade_dg_suedfenster_o",
+            "name": "Büro Südfenster Ost",
+            "address": "HmIP-RF.001120C9A8463A:3.LEVEL",
+            "data_type": "float",
+            "unit_of_measurement": "% offen",
+            "scale": 100,
+            "precision": 0,
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "rollade_dg_suedfenster_w",
+            "name": "Büro Südfenster West",
+            "address": "HmIP-RF.001120C9A851C9:3.LEVEL",
+            "data_type": "float",
+            "unit_of_measurement": "% offen",
+            "scale": 100,
+            "precision": 0,
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "licht_og",
+            "name": "Treppenhaus Licht OG",
+            "address": "HmIP-RF.00259D89B072B1:10.STATE",
+            "values": [
+                {
+                    "value": "false",
+                    "meaning": "aus"
+                },
+                {
+                    "value": "true",
+                    "meaning": "an"
+                }
+            ],
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "licht_eg",
+            "name": "Treppenhaus Licht EG",
+            "address": "HmIP-RF.00259D89B072B1:6.STATE",
+            "values": [
+                {
+                    "value": "false",
+                    "meaning": "aus"
+                },
+                {
+                    "value": "true",
+                    "meaning": "an"
+                }
+            ],
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "licht_keller",
+            "name": "Treppenhaus Licht Keller",
+            "address": "HmIP-RF.00259D89B072B1:14.STATE",
+            "values": [
+                {
+                    "value": "false",
+                    "meaning": "aus"
+                },
+                {
+                    "value": "true",
+                    "meaning": "an"
+                }
+            ],
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "mess_steckdose",
+            "name": "Schaltsteckdose (DG)",
+            "address": "HmIP-RF.0034DF2991DDB5:3.STATE",
+            "values": [
+                {
+                    "value": "false",
+                    "meaning": "aus"
+                },
+                {
+                    "value": "true",
+                    "meaning": "an"
+                }
+            ],
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "wc_fenster",
+            "name": "WC Fenster im EG",
+            "address": "HmIP-RF.0007DF299517A1:1.STATE",
+            "values": [
+                {
+                    "value": "0",
+                    "meaning": "geschlossen"
+                },
+                {
+                    "value": "1",
+                    "meaning": "gekippt"
+                },
+                {
+                    "value": "2",
+                    "meaning": "offen"
+                }
+            ],
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "garagentor",
+            "name": "Garagentor Stellung",
+            "address": "HmIP-RF.001EDF298F69A0:1.MOTION",
+            "values": [
+                {
+                    "value": "false",
+                    "meaning": "geschlossen"
+                },
+                {
+                    "value": "true",
+                    "meaning": "offen"
+                }
+            ],
+            "device_class": "DP"
+        }
+    ]
+}

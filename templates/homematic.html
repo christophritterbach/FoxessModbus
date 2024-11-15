@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homematic Aktuelle Zustände</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foxess.js') }}"></script>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="PV">PV-Ansicht</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="BAT">Batterie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="TAG">Tageswerte</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/">Alle Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="HMIP">Homematic</a>
+        </li>
+    </ul>
+    <div class="container-fluid bg-primary text-center text-white">
+        <h1>Gesamtübersicht</h1>
+        <button onclick="getDataFromServer()">Lese Daten</button>
+    </div>
+    <div class="container-fluid bg-secondary text-white">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>Temperaturen</h2>
+                <table class="table table-bordered">
+                    <thead thead class="thead-dark">
+                        <tr>
+                            <th>Gerät</th>
+                            <th>Ist Wert</th>
+                            <th>Soll Wert</th>
+                            <th>Luftfeuchtigkeit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wohnzimmer</td>
+                            <td id="temp_ist_eg_wohnzimmer">IST</td>
+                            <td id="temp_soll_eg_wohnzimmer">SOLL</td>
+                            <td id="feuchte_eg_wohnzimmer">Feuchte</td>
+                        </tr>
+                        <tr>
+                            <td>Küche</td>
+                            <td id="temp_ist_eg_kueche">IST</td>
+                            <td id="temp_soll_eg_kueche">SOLL</td>
+                            <td id="feuchte_eg_kueche">Feuchte</td>
+                        </tr>
+                        <tr>
+                            <td>Treppenhaus</td>
+                            <td id="temp_ist_eg_treppe">IST</td>
+                            <td id="temp_soll_eg_treppe">SOLL</td>
+                            <td id="feuchte_eg_treppe">Feuchte</td>
+                        </tr>
+                        <tr>
+                            <td>Schlafzimmer</td>
+                            <td id="temp_ist_og_schlafzimmer">IST</td>
+                            <td id="temp_soll_og_schlafzimmer">SOLL</td>
+                            <td id="feuchte_og_schlafzimmer">Feuchte</td>
+                        </tr>
+                        <tr>
+                            <td>Kinderzimmer</td>
+                            <td id="temp_ist_og_kinderzimmer">IST</td>
+                            <td id="temp_soll_og_kinderzimmer">SOLL</td>
+                            <td id="feuchte_og_kinderzimmer">Feuchte</td>
+                        </tr>
+                        <tr>
+                            <td>Badezimmer</td>
+                            <td id="temp_ist_og_badezimmer">IST</td>
+                            <td id="temp_soll_og_badezimmer">SOLL</td>
+                            <td id="feuchte_og_badezimmer">Feuchte</td>
+                        </tr>
+                        <tr>
+                            <td>Badezimmer Handtuchhalter</td>
+                            <td id="temp_ist_og_badezimmer_h">IST</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Büro groß Süd</td>
+                            <td id="temp_ist_dg_buero_g_s">IST</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Büro groß Nord</td>
+                            <td id="temp_ist_dg_buero_g_n">IST</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Büro klein</td>
+                            <td id="temp_ist_dg_buero_k_n">IST</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-2">
+                <h2>Lichter</h2>
+                <table class="table table-bordered">
+                    <thead thead class="thead-dark">
+                        <tr>
+                            <th>Gerät</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Treppenhaus Keller</td>
+                            <td id="licht_keller">IST</td>
+                        </tr>
+                        <tr>
+                            <td>Treppenhaus Erdgeschoß</td>
+                            <td id="licht_eg">IST</td>
+                        </tr>
+                        <tr>
+                            <td>Treppenhaus Obergeschoß</td>
+                            <td id="licht_og">IST</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-2">
+                <h2>Rolläden</h2>
+                <table class="table table-bordered">
+                    <thead thead class="thead-dark">
+                        <tr>
+                            <th>Gerät</th>
+                            <th>geöffnet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Südfenster West</td>
+                            <td id="rollade_dg_suedfenster_w">IST</td>
+                        </tr>
+                        <tr>
+                            <td>Südfenster Ost</td>
+                            <td id="rollade_dg_suedfenster_o">IST</td>
+                        </tr>
+                        <tr>
+                            <td>Seitenfenster</td>
+                            <td id="rollade_dg_seitenfenster">IST</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-2">
+                <h2>Sonstige</h2>
+                <table class="table table-bordered">
+                    <thead thead class="thead-dark">
+                        <tr>
+                            <th>Gerät</th>
+                            <th>geöffnet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>WC Fenster</td>
+                            <td id="wc_fenster">IST</td>
+                        </tr>
+                        <tr>
+                            <td>Garagentor</td>
+                            <td id="garagentor">IST</td>
+                        </tr>
+                        <tr>
+                            <td>Mess-Steckdose</td>
+                            <td id="mess_steckdose">IST</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-2">
+                <h2>Strom</h2>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Aktuelle Leistung</td>
+                            <td id="strom_akt_leistung">IST</td>
+                        </tr>
+                        <tr>
+                            <td>Bezug total</td>
+                            <td id="strom_bezug_total">IST</td>
+                        </tr>
+                        <tr>
+                            <td>Einspeisung total</td>
+                            <td id="strom_einspeisung_total">IST</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        getHmipDataFromServer()
+    </script>
+</body>
+</html>

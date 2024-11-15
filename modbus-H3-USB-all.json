@@ -1,0 +1,3307 @@
+{
+    "name": "HA-FoxESS-H3-Modbus-USB",
+    "type": "serial",
+    "port": "/dev/ttyUSB0",
+    "method": "rtu",
+    "baudrate": 9600,
+    "bytesize": 8,
+    "stopbits": 1,
+    "parity": "N",
+    "sensors": [
+        {
+            "name": "Inverter Model",
+            "unique_id": "foxess_inv1_model",
+            "address": 30000,
+            "slave": 247,
+            "count": 16,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "Firmware Master",
+            "unique_id": "foxess_fw_master",
+            "address": 30016,
+            "slave": 247,
+            "data_type": "uint16",
+            "precision": 2,
+            "scale": 0.01,
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "Firmware Slave",
+            "unique_id": "foxess_fw_slave",
+            "address": 30017,
+            "slave": 247,
+            "data_type": "uint16",
+            "precision": 2,
+            "scale": 0.01,
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "Firmware manager",
+            "unique_id": "foxess_fw_mgr",
+            "address": 30018,
+            "slave": 247,
+            "data_type": "uint16",
+            "precision": 2,
+            "scale": 0.01,
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "Firmware Battery Master",
+            "unique_id": "foxess_bat_master",
+            "address": 30019,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "Firmware Battery Slave 1",
+            "unique_id": "foxess_bat_slave_1",
+            "address": 30020,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery_version"
+        },
+        {
+            "name": "Firmware Battery Slave 2",
+            "unique_id": "foxess_bat_slave_2",
+            "address": 30021,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery_version"
+        },
+        {
+            "name": "Firmware Battery Slave 3",
+            "unique_id": "foxess_bat_slave_3",
+            "address": 30022,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery_version"
+        },
+        {
+            "name": "Firmware Battery Slave 4",
+            "unique_id": "foxess_bat_slave_4",
+            "address": 30023,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery_version"
+        },
+        {
+            "name": "Firmware Battery Slave 5",
+            "unique_id": "foxess_bat_slave_5",
+            "address": 30024,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery_version"
+        },
+        {
+            "name": "Firmware Battery Slave 6",
+            "unique_id": "foxess_bat_slave_6",
+            "address": 30025,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery_version"
+        },
+        {
+            "name": "Firmware Battery Slave 7",
+            "unique_id": "foxess_bat_slave_7",
+            "address": 30026,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery_version"
+        },
+        {
+            "name": "Firmware Battery Slave 8",
+            "unique_id": "foxess_bat_slave_8",
+            "address": 30027,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery_version"
+        },
+        {
+            "name": "Modbus Protocol Version",
+            "unique_id": "modbus_protocol_version",
+            "address": 30028,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "Serial Number",
+            "unique_id": "foxess_serial_no",
+            "address": 30029,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "BMS Family Type",
+            "unique_id": "foxess_bms_family_type",
+            "address": 30044,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "given_value",
+            "values": [
+                {
+                    "value": 82,
+                    "meaning": "HV2600"
+                },
+                {
+                    "value": 83,
+                    "meaning": "ECS"
+                },
+                {
+                    "value": 84,
+                    "meaning": "HV2600-2"
+                },
+                {
+                    "value": 85,
+                    "meaning": "ECS2900-2"
+                },
+                {
+                    "value": 86,
+                    "meaning": "ECS4100-2"
+                },
+                {
+                    "value": 87,
+                    "meaning": "Mira-HV25"
+                },
+                {
+                    "value": 88,
+                    "meaning": "ECS4000-2"
+                },
+                {
+                    "value": 89,
+                    "meaning": "ECS4300"
+                },
+                {
+                    "value": 90,
+                    "meaning": "Mira-HV28"
+                },
+                {
+                    "value": 91,
+                    "meaning": "ECS4800"
+                },
+                {
+                    "value": 92,
+                    "meaning": "ECS2800"
+                },
+                {
+                    "value": 93,
+                    "meaning": "Q.SAVE B4.5F"
+                },
+                {
+                    "value": 94,
+                    "meaning": "Q.SAVE B6.4F"
+                },
+                {
+                    "value": 95,
+                    "meaning": "EP5"
+                },
+                {
+                    "value": 96,
+                    "meaning": "EP11"
+                },
+                {
+                    "value": 97,
+                    "meaning": "EP3"
+                },
+                {
+                    "value": 98,
+                    "meaning": "EP4"
+                },
+                {
+                    "value": 255,
+                    "meaning": "Common Series"
+                }
+            ]
+        },
+        {
+            "name": "BMS Master Sn",
+            "unique_id": "foxess_bms_master_sn",
+            "address": 30045,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "BMS Slave 1 Sn",
+            "unique_id": "foxess_bms_slave_1_sn",
+            "address": 30060,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "BMS Slave 2 Sn",
+            "unique_id": "foxess_bms_slave_2_sn",
+            "address": 30075,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "BMS Slave 3 Sn",
+            "unique_id": "foxess_bms_slave_3_sn",
+            "address": 30090,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "BMS Slave 4 Sn",
+            "unique_id": "foxess_bms_slave_4_sn",
+            "address": 30105,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "BMS Slave 5 Sn",
+            "unique_id": "foxess_bms_slave_5_sn",
+            "address": 30120,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "BMS Slave 6 Sn",
+            "unique_id": "foxess_bms_slave_6_sn",
+            "address": 30135,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "BMS Slave 7 Sn",
+            "unique_id": "foxess_bms_slave_7_sn",
+            "address": 30150,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "BMS Slave 8 Sn",
+            "unique_id": "foxess_bms_slave_8_sn",
+            "address": 30165,
+            "slave": 247,
+            "count": 15,
+            "data_type": "string",
+            "scan_interval": 86400,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "PV1-Voltage",
+            "unique_id": "foxess_inv1_pv1_voltage",
+            "address": 31000,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "PV1-Current",
+            "unique_id": "foxess_inv1_pv1_current",
+            "address": 31001,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "PV1-Power",
+            "unique_id": "foxess_inv1_pv1_power",
+            "address": 31002,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "PV2-Voltage",
+            "unique_id": "foxess_inv1_pv2_voltage",
+            "address": 31003,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "PV2-Current",
+            "unique_id": "foxess_inv1_pv2_current",
+            "address": 31004,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "PV2-Power",
+            "unique_id": "foxess_inv1_pv2_power",
+            "address": 31005,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Voltage R",
+            "unique_id": "foxess_inv1_grid_voltage_R",
+            "address": 31006,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "Grid Voltage S",
+            "unique_id": "foxess_inv1_grid_voltage_S",
+            "address": 31007,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "Grid Voltage T",
+            "unique_id": "foxess_inv1_grid_voltage_T",
+            "address": 31008,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "Inv Current R",
+            "unique_id": "foxess_inv1_inv_current_R",
+            "address": 31009,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "Inv Current S",
+            "unique_id": "foxess_inv1_inv_current_S",
+            "address": 31010,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "Inv Current T",
+            "unique_id": "foxess_inv1_inv_current_T",
+            "address": 31011,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "Inv Power R",
+            "unique_id": "foxess_inv1_inv_power_R",
+            "address": 31012,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Inv Power S",
+            "unique_id": "foxess_inv1_inv_power_S",
+            "address": 31013,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Inv Power T",
+            "unique_id": "foxess_inv1_inv_power_T",
+            "address": 31014,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Frequency",
+            "unique_id": "foxess_inv1_grid_frequency",
+            "address": 31015,
+            "slave": 247,
+            "unit_of_measurement": "Hz",
+            "data_type": "uint16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "frequency"
+        },
+        {
+            "name": "EPS Voltage R",
+            "unique_id": "foxess_inv1_eps_voltage_R",
+            "address": 31016,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "EPS Voltage S",
+            "unique_id": "foxess_inv1_eps_voltage_S",
+            "address": 31017,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "EPS Voltage T",
+            "unique_id": "foxess_inv1_eps_voltage_T",
+            "address": 31018,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "EPS Current R",
+            "unique_id": "foxess_inv1_eps_current_R",
+            "address": 31019,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "EPS Current S",
+            "unique_id": "foxess_inv1_eps_current_S",
+            "address": 31020,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "EPS Current T",
+            "unique_id": "foxess_inv1_eps_current_T",
+            "address": 31021,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "EPS Power R",
+            "unique_id": "foxess_inv1_eps_power_R",
+            "address": 31022,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "EPS Power S",
+            "unique_id": "foxess_inv1_eps_power_S",
+            "address": 31023,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "EPS Power T",
+            "unique_id": "foxess_inv1_eps_power_T",
+            "address": 31024,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "EPS Frequency",
+            "unique_id": "foxess_inv1_eps_frequency",
+            "address": 31025,
+            "slave": 247,
+            "unit_of_measurement": "Hz",
+            "data_type": "uint16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 300,
+            "scan_offset": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "frequency"
+        },
+        {
+            "name": "Meter Power R",
+            "unique_id": "foxess_meter1_power_r",
+            "address": 31026,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Meter Power S",
+            "unique_id": "foxess_meter1_power_s",
+            "address": 31027,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Meter Power T",
+            "unique_id": "foxess_meter1_power_t",
+            "address": 31028,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Load Power R",
+            "unique_id": "foxess_inv1_load_power_r",
+            "address": 31029,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Load Power S",
+            "unique_id": "foxess_inv1_load_power_s",
+            "address": 31030,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Load Power T",
+            "unique_id": "foxess_inv1_load_power_t",
+            "address": 31031,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Inverter Temperature",
+            "unique_id": "foxess_inv1_inverter_temperature",
+            "address": 31032,
+            "slave": 247,
+            "unit_of_measurement": "°C",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 180,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "temperature"
+        },
+        {
+            "name": "Internal Temperature",
+            "unique_id": "foxess_inv1_internal_temperature",
+            "address": 31033,
+            "slave": 247,
+            "unit_of_measurement": "°C",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 180,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "temperature"
+        },
+        {
+            "name": "Battery Voltage",
+            "unique_id": "foxess_inv1_battery_voltage",
+            "address": 31034,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "Battery Current",
+            "unique_id": "foxess_inv1_battery_current",
+            "address": 31035,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "Battery Power",
+            "unique_id": "foxess_inv1_battery_power",
+            "address": 31036,
+            "slave": 247,
+            "unit_of_measurement": "W",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Battery Temperature",
+            "unique_id": "foxess_inv1_battery_temperature",
+            "address": 31037,
+            "slave": 247,
+            "unit_of_measurement": "°C",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 180,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "temperature"
+        },
+        {
+            "name": "Battery SoC",
+            "unique_id": "foxess_inv1_battery_soc",
+            "address": 31038,
+            "slave": 247,
+            "unit_of_measurement": "%",
+            "data_type": "int16",
+            "scan_interval": 300,
+            "scan_offset": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery"
+        },
+        {
+            "name": "Maximum Charge Current",
+            "unique_id": "foxess_inv1_max_charge_current",
+            "address": 31039,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "Maximum Discharge Current",
+            "unique_id": "foxess_inv1_max_discharge_current",
+            "address": 31040,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "Inverter State",
+            "unique_id": "foxess_inv1_state",
+            "address": 31041,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "given_value",
+            "values": [
+                {
+                    "value": 0,
+                    "meaning": "waiting"
+                },
+                {
+                    "value": 1,
+                    "meaning": "selfcheck"
+                },
+                {
+                    "value": 2,
+                    "meaning": "ongrid"
+                },
+                {
+                    "value": 3,
+                    "meaning": "EPS"
+                },
+                {
+                    "value": 4,
+                    "meaning": "fault"
+                },
+                {
+                    "value": 4,
+                    "meaning": "fault"
+                },
+                {
+                    "value": 8,
+                    "meaning": "idlestate"
+                }
+            ]
+        },
+        {
+            "name": "BMS Connect State",
+            "unique_id": "foxess_inv1_bms_connect_state",
+            "address": 31042,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 120,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "Meter Connect State",
+            "unique_id": "foxess_inv1_meter_connect_state",
+            "address": 31043,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 120,
+            "state_class": "measurement",
+            "input_type": "holding"
+        },
+        {
+            "name": "Inverter Fault 1 Code",
+            "unique_id": "foxess_inv1_fault1_code",
+            "address": 31044,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "GridLostFault"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "GridVoltFault"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "GridFreqFault"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "Grid10minVoltFault"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "PPL_OverTime"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "SWInvCurFault"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "DciFault"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "PhaseAngleFault"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "HardwareTrip"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "SwBusVoltFault"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "BatVoltFault"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "SwBatCurFault"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "IsoFault"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "ResCurFault"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "PvVoltFault"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "SwPvCurFault"
+                }
+            ]
+        },
+        {
+            "name": "Inverter Fault 2 Code",
+            "unique_id": "foxess_inv1_fault2_code",
+            "address": 31045,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "TempFault"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "GroundConnFault"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "OverLoadFault"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "EpsOverLoadFault"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "BatPowerLowFault"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "Eps_OCP"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "Dcv_OVP"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "DirectArcFault"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "SciFault"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "MasterSpiFault"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "BmsLostFault"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "ParallelFault"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "ArmVerFault"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "SlaveVerFault"
+                }
+            ]
+        },
+        {
+            "name": "Inverter Fault 3 Code",
+            "unique_id": "foxess_inv1_fault3_code",
+            "address": 31046,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "BatInvalid"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "BatExceptionLimit"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "None"
+                }
+            ]
+        },
+        {
+            "name": "Inverter Fault 4 Code",
+            "unique_id": "foxess_inv1_fault4_code",
+            "address": 31047,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "major",
+                    "fault_message": "SampleCircuitOffset"
+                },
+                {
+                    "bit": 1,
+                    "severity": "major",
+                    "fault_message": "RCDeviceFault"
+                },
+                {
+                    "bit": 2,
+                    "severity": "major",
+                    "fault_message": "InvEepromFault"
+                },
+                {
+                    "bit": 3,
+                    "severity": "major",
+                    "fault_message": "SampleConsFault"
+                },
+                {
+                    "bit": 4,
+                    "severity": "major",
+                    "fault_message": "BatRelayOpenFault"
+                },
+                {
+                    "bit": 5,
+                    "severity": "major",
+                    "fault_message": "BatRelayCloseFault"
+                },
+                {
+                    "bit": 6,
+                    "severity": "major",
+                    "fault_message": "BatBuckFault"
+                },
+                {
+                    "bit": 7,
+                    "severity": "major",
+                    "fault_message": "BatBoostFault"
+                },
+                {
+                    "bit": 8,
+                    "severity": "major",
+                    "fault_message": "EpsRelayFault"
+                },
+                {
+                    "bit": 9,
+                    "severity": "major",
+                    "fault_message": "TBD"
+                },
+                {
+                    "bit": 10,
+                    "severity": "major",
+                    "fault_message": "BatConnDirFault"
+                },
+                {
+                    "bit": 11,
+                    "severity": "major",
+                    "fault_message": "MainRelayOpenFault"
+                },
+                {
+                    "bit": 12,
+                    "severity": "major",
+                    "fault_message": "InvRelayOpenFault"
+                },
+                {
+                    "bit": 13,
+                    "severity": "major",
+                    "fault_message": "ByPassRelayOpenFault"
+                },
+                {
+                    "bit": 14,
+                    "severity": "major",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 15,
+                    "severity": "major",
+                    "fault_message": "SystermFault"
+                }
+            ]
+        },
+        {
+            "name": "Inverter Fault 5 Code",
+            "unique_id": "foxess_inv1_fault5_code",
+            "address": 31048,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "GridVoltConsFault"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "GridFreqConsFault"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "DciConsFault"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "ResCurConsFault"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "SlaveSpiFault"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "SlaveSampleFault"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "None"
+                }
+            ]
+        },
+        {
+            "name": "Inverter Fault 6 Code",
+            "unique_id": "foxess_inv1_fault6_code",
+            "address": 31049,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "ArmEepromFault"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "MeterLostFault"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "FanAlarm"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "InvBatVoltLow"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "BmsConLost"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "None"
+                }
+            ]
+        },
+        {
+            "name": "Inverter Fault 7 Code",
+            "unique_id": "foxess_inv1_fault7_code",
+            "address": 31050,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 600,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "None"
+                }
+            ]
+        },
+        {
+            "name": "Inverter Fault 8 Code",
+            "unique_id": "foxess_inv1_fault8_code",
+            "address": 31051,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 600,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "None"
+                }
+            ]
+        },
+        {
+            "name": "Inverter Voltage R",
+            "unique_id": "foxess_inv1_voltage_r",
+            "address": 31052,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "uint16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "Inverter Voltage S",
+            "unique_id": "foxess_inv1_voltage_s",
+            "address": 31053,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "uint16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "Inverter Voltage T",
+            "unique_id": "foxess_inv1_voltage_t",
+            "address": 31054,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "uint16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "voltage"
+        },
+        {
+            "name": "Total Inverter Apparent Power",
+            "unique_id": "foxess_inv1_total_inverter_apparent_power",
+            "address": 31055,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "VA",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Inverter Apparent Power R",
+            "unique_id": "foxess_inv1_inverter_apparent_power_r",
+            "address": 31057,
+            "slave": 247,
+            "unit_of_measurement": "VA",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Inverter Apparent Power S",
+            "unique_id": "foxess_inv1_inverter_apparent_power_s",
+            "address": 31058,
+            "slave": 247,
+            "unit_of_measurement": "VA",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Inverter Apparent Power T N/A",
+            "unique_id": "foxess_inv1_inverter_apparent_power_t",
+            "address": 31059,
+            "slave": 247,
+            "unit_of_measurement": "VA",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Inverter Frequency R N/A",
+            "unique_id": "foxess_inv1_frequency_r",
+            "address": 31060,
+            "slave": 247,
+            "unit_of_measurement": "Hz",
+            "data_type": "uint16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "frequency"
+        },
+        {
+            "name": "Inverter Frequency S N/A",
+            "unique_id": "foxess_inv1_frequency_s",
+            "address": 31061,
+            "slave": 247,
+            "unit_of_measurement": "Hz",
+            "data_type": "uint16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "frequency"
+        },
+        {
+            "name": "Inverter Frequency T N/A",
+            "unique_id": "foxess_inv1_frequency_t",
+            "address": 31062,
+            "slave": 247,
+            "unit_of_measurement": "Hz",
+            "data_type": "uint16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "frequency"
+        },
+        {
+            "name": "PV Power N/A",
+            "unique_id": "foxess_inv1_pv_power",
+            "address": 31063,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Total Grid Active Power N/A",
+            "unique_id": "foxess_inv1_total_grid_active_power",
+            "address": 31065,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Active Power R N/A",
+            "unique_id": "foxess_inv1_grid_active_power_r",
+            "address": 31067,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Active Power S N/A",
+            "unique_id": "foxess_inv1_grid_active_power_s",
+            "address": 31069,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Active Power T N/A",
+            "unique_id": "foxess_inv1_grid_active_power_t",
+            "address": 31071,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Total Grid Reactive Power N/A",
+            "unique_id": "foxess_inv1_total_grid_reactive_power",
+            "address": 31073,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Reactive Power R N/A",
+            "unique_id": "foxess_inv1_grid_reactive_power_r",
+            "address": 31075,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Reactive Power S N/A",
+            "unique_id": "foxess_inv1_grid_reactive_power_s",
+            "address": 31077,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Reactive Power T N/A",
+            "unique_id": "foxess_inv1_grid_reactive_power_t",
+            "address": 31079,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 0,
+            "scan_interval": 300,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Total Grid Power Factor N/A",
+            "unique_id": "foxess_inv1_total_grid_power_factor",
+            "address": 31081,
+            "slave": 247,
+            "unit_of_measurement": "%",
+            "data_type": "int16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Power Factor R N/A",
+            "unique_id": "foxess_inv1_grid_power_factor_r",
+            "address": 31082,
+            "slave": 247,
+            "unit_of_measurement": "%",
+            "data_type": "int16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Power Factor S N/A",
+            "unique_id": "foxess_inv1_grid_power_factor_s",
+            "address": 31083,
+            "slave": 247,
+            "unit_of_measurement": "%",
+            "data_type": "int16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Power Factor T N/A",
+            "unique_id": "foxess_inv1_grid_power_factor_t",
+            "address": 31084,
+            "slave": 247,
+            "unit_of_measurement": "%",
+            "data_type": "int16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid Frequency S N/A",
+            "unique_id": "foxess_inv1_grid_frequency_s",
+            "address": 31085,
+            "slave": 247,
+            "unit_of_measurement": "Hz",
+            "data_type": "uint16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "frequency"
+        },
+        {
+            "name": "Grid Frequency T N/A",
+            "unique_id": "foxess_inv1_grid_frequency_t",
+            "address": 31086,
+            "slave": 247,
+            "unit_of_measurement": "Hz",
+            "data_type": "uint16",
+            "scale": 0.01,
+            "precision": 2,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "frequency"
+        },
+        {
+            "name": "Grid Current R N/A",
+            "unique_id": "foxess_inv1_grid_current_R",
+            "address": 31087,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "Grid Current S N/A",
+            "unique_id": "foxess_inv1_grid_current_S",
+            "address": 31088,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "Grid Current T N/A",
+            "unique_id": "foxess_inv1_grid_current_T",
+            "address": 31089,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 2,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "current"
+        },
+        {
+            "name": "Battery SoH N/A",
+            "unique_id": "foxess_inv1_battery_soh",
+            "address": 31090,
+            "slave": 247,
+            "unit_of_measurement": "%",
+            "data_type": "int16",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 600,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery"
+        },
+        {
+            "name": "Battery Capacity N/A",
+            "unique_id": "foxess_inv1_battery_capacity",
+            "address": 31091,
+            "slave": 247,
+            "unit_of_measurement": "Ah",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 0,
+            "scan_interval": 3600,
+            "scan_offset": 180,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery"
+        },
+        {
+            "name": "Available import power N/A",
+            "unique_id": "foxess_inv1_avail_import_power",
+            "address": 31092,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "uint32",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": "60",
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Available export power N/A",
+            "unique_id": "foxess_inv1_avail_export_power",
+            "address": 31094,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "uint32",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Meter2 connect state N/A",
+            "unique_id": "foxess_inv1_meter2_connect_state",
+            "address": 31096,
+            "slave": 247,
+            "unit_of_measurement": "N/A",
+            "data_type": "uint16",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "state"
+        },
+        {
+            "name": "Total Load Power N/A",
+            "unique_id": "foxess_inv1_total_load_power",
+            "address": 31097,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "DC Link Voltage N/A",
+            "unique_id": "foxess_inv1_dc_link_volrtag",
+            "address": 31099,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "uint16",
+            "scale": 0.1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Cell Voltage High N/A",
+            "unique_id": "foxess_inv1_cell_voltage_high",
+            "address": 31100,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "uint16",
+            "scale": 0.1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Cell Voltage Low N/A",
+            "unique_id": "foxess_inv1_cell_voltage_low",
+            "address": 31101,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "uint16",
+            "scale": 0.1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Cell Temperature High N/A",
+            "unique_id": "foxess_inv1_cell_temp_high",
+            "address": 31102,
+            "slave": 247,
+            "unit_of_measurement": "°C",
+            "data_type": "int16",
+            "scale": 0.1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "temperature"
+        },
+        {
+            "name": "Cell Temperature Low N/A",
+            "unique_id": "foxess_inv1_cell_temp_low",
+            "address": 31103,
+            "slave": 247,
+            "unit_of_measurement": "°C",
+            "data_type": "int16",
+            "scale": 0.1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "temperature"
+        },
+        {
+            "name": "BatVoltage N/A",
+            "unique_id": "foxess_inv1_bat_voltage",
+            "address": 31104,
+            "slave": 247,
+            "unit_of_measurement": "V",
+            "data_type": "uint16",
+            "scale": 0.1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "BatCurrent N/A",
+            "unique_id": "foxess_inv1_bat_current",
+            "address": 31105,
+            "slave": 247,
+            "unit_of_measurement": "A",
+            "data_type": "uint16",
+            "scale": 0.1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "BatTemperature N/A",
+            "unique_id": "foxess_inv1_bat_temperature",
+            "address": 31106,
+            "slave": 247,
+            "unit_of_measurement": "°C",
+            "data_type": "int16",
+            "scale": 0.1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "temperature"
+        },
+        {
+            "name": "Meter 2 Total Power N/A",
+            "unique_id": "foxess_inv1_meter2_total_power",
+            "address": 31107,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Meter 2 PowerR N/A",
+            "unique_id": "foxess_inv1_meter2_power_r",
+            "address": 31109,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Meter 2 PowerS N/A",
+            "unique_id": "foxess_inv1_meter2_power_s",
+            "address": 31111,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Meter 2 PowerT N/A",
+            "unique_id": "foxess_inv1_meter2_power_t",
+            "address": 31113,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Grid-connected Time N/A",
+            "unique_id": "foxess_inv1_grid_connect_time",
+            "address": 31115,
+            "slave": 247,
+            "unit_of_measurement": "s",
+            "data_type": "uint16",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 1800,
+            "scan_offset": 150,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Collector status N/A",
+            "unique_id": "foxess_inv1_collector_status",
+            "address": 31116,
+            "slave": 247,
+            "data_type": "uint16",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 30,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "given_value",
+            "values": [
+                {
+                    "value": 0,
+                    "meaning": "communication lost"
+                },
+                {
+                    "value": 1,
+                    "meaning": "connection with internet"
+                },
+                {
+                    "value": 2,
+                    "meaning": "no connection with internet"
+                }
+            ]
+        },
+        {
+            "name": "BMS Fault 1 Code N/A",
+            "unique_id": "foxess_inv1_bms_fault1_code",
+            "address": 31117,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "critical",
+                    "fault_message": "External Communication Error"
+                },
+                {
+                    "bit": 1,
+                    "severity": "critical",
+                    "fault_message": "Internal communication"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "Over voltage(Cell voltage High or Total voltage High)"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "Under voltage(Cell voltage low or Total voltage low)"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "Over current when charging"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "Over current when discharging"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "Over temperature"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "Under temperature"
+                },
+                {
+                    "bit": 8,
+                    "severity": "critical",
+                    "fault_message": "BMS Cell Imbalance"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "Hardware Protect"
+                },
+                {
+                    "bit": 10,
+                    "severity": "warning",
+                    "fault_message": "Circuit Fault"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "RSV"
+                },
+                {
+                    "bit": 12,
+                    "severity": "critical",
+                    "fault_message": "VoltSensor Fault"
+                },
+                {
+                    "bit": 13,
+                    "severity": "critical",
+                    "fault_message": "TempSensor Fault"
+                },
+                {
+                    "bit": 14,
+                    "severity": "critical",
+                    "fault_message": "CurrSensor Fault"
+                },
+                {
+                    "bit": 15,
+                    "severity": "critical",
+                    "fault_message": "Relay_Fault"
+                }
+            ]
+        },
+        {
+            "name": "BMS Fault 2 Code N/A",
+            "unique_id": "foxess_inv1_bms_fault2_code",
+            "address": 31118,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "major",
+                    "fault_message": "BMS_Type_Unmatch"
+                },
+                {
+                    "bit": 1,
+                    "severity": "warning",
+                    "fault_message": "BMS_Version_Unmathch"
+                },
+                {
+                    "bit": 2,
+                    "severity": "warning",
+                    "fault_message": "BMS_Manufacturer_Unmathch"
+                },
+                {
+                    "bit": 3,
+                    "severity": "warning",
+                    "fault_message": "BMS_SW&HW_Unmathch"
+                },
+                {
+                    "bit": 4,
+                    "severity": "warning",
+                    "fault_message": "BMS_ M&S_Unmathch"
+                },
+                {
+                    "bit": 5,
+                    "severity": "warning",
+                    "fault_message": "BMS_CR_Unresponsive"
+                },
+                {
+                    "bit": 6,
+                    "severity": "warning",
+                    "fault_message": "BMSSupplyFault"
+                },
+                {
+                    "bit": 7,
+                    "severity": "warning",
+                    "fault_message": "RSV"
+                },
+                {
+                    "bit": 8,
+                    "severity": "warning",
+                    "fault_message": "SelfChk_Fault"
+                },
+                {
+                    "bit": 9,
+                    "severity": "warning",
+                    "fault_message": "CellTempDiff_Fault"
+                },
+                {
+                    "bit": 10,
+                    "severity": "warning",
+                    "fault_message": "CellVoltBreakLine_Fault"
+                },
+                {
+                    "bit": 11,
+                    "severity": "warning",
+                    "fault_message": "SelfChk_SysVoltMisMatch_Fault"
+                },
+                {
+                    "bit": 12,
+                    "severity": "critical",
+                    "fault_message": "PreChg_Fault"
+                },
+                {
+                    "bit": 13,
+                    "severity": "warning",
+                    "fault_message": "SelfChk_Hvb_Fault"
+                },
+                {
+                    "bit": 14,
+                    "severity": "warning",
+                    "fault_message": "SelfChk_PackCur_Fault"
+                },
+                {
+                    "bit": 15,
+                    "severity": "warning",
+                    "fault_message": "SelfChk_SysMismatch_Fault"
+                }
+            ]
+        },
+        {
+            "name": "BMS Fault 3 Code N/A",
+            "unique_id": "foxess_inv1_bms_fault3_code",
+            "address": 31119,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "critical",
+                    "fault_message": "Actor_Fault"
+                },
+                {
+                    "bit": 1,
+                    "severity": "major",
+                    "fault_message": "SOH_LOW"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "Charge PowerHigh"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "DisCharge PowerHigh"
+                },
+                {
+                    "bit": 4,
+                    "severity": "major",
+                    "fault_message": "SUV"
+                },
+                {
+                    "bit": 5,
+                    "severity": "warning",
+                    "fault_message": "CellVolt High Invaild"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "Cell temperature High Invaild"
+                },
+                {
+                    "bit": 7,
+                    "severity": "critical",
+                    "fault_message": "Balance Temperture High"
+                },
+                {
+                    "bit": 8,
+                    "severity": "critical",
+                    "fault_message": "PreChg_ResTemperature High"
+                },
+                {
+                    "bit": 9,
+                    "severity": "critical",
+                    "fault_message": "short current"
+                },
+                {
+                    "bit": 10,
+                    "severity": "critical",
+                    "fault_message": "AFE Communication fault"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "AFE Fault"
+                },
+                {
+                    "bit": 12,
+                    "severity": "critical",
+                    "fault_message": "IVU communication fault"
+                },
+                {
+                    "bit": 13,
+                    "severity": "warning",
+                    "fault_message": "OldBmuFault"
+                },
+                {
+                    "bit": 14,
+                    "severity": "critical",
+                    "fault_message": "Module serise address fault"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "RSV"
+                }
+            ]
+        },
+        {
+            "name": "BMS Fault 4 Code N/A",
+            "unique_id": "foxess_inv1_bms_fault4_code",
+            "address": 31120,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 600,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "None"
+                }
+            ]
+        },
+        {
+            "name": "BMS Fault 5 Code N/A",
+            "unique_id": "foxess_inv1_bms_fault5_code",
+            "address": 31121,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 600,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "None"
+                }
+            ]
+        },
+        {
+            "name": "BMS Fault 6 Code N/A",
+            "unique_id": "foxess_inv1_bms_fault6_code",
+            "address": 31122,
+            "slave": 247,
+            "data_type": "uint16",
+            "scan_interval": 600,
+            "scan_offset": 120,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "error",
+            "error_bits": [
+                {
+                    "bit": 0,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 1,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 2,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 3,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 4,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 5,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 6,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 7,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 8,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 9,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 10,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 11,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 12,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 13,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 14,
+                    "severity": "minor",
+                    "fault_message": "None"
+                },
+                {
+                    "bit": 15,
+                    "severity": "minor",
+                    "fault_message": "None"
+                }
+            ]
+        },
+        {
+            "name": "Battery Remain Energy N/A",
+            "unique_id": "foxess_inv1_bat_remain_energy",
+            "address": 31123,
+            "slave": 247,
+            "unit_of_measurement": "Wh",
+            "data_type": "uint16",
+            "scale": 10,
+            "precision": 1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "battery"
+        },
+        {
+            "name": "Total Inv Power N/A",
+            "unique_id": "foxess_inv1_total_inv_power",
+            "address": 31124,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "W",
+            "data_type": "int32",
+            "scale": 1,
+            "precision": 1,
+            "scan_interval": 60,
+            "state_class": "measurement",
+            "input_type": "holding",
+            "device_class": "power"
+        },
+        {
+            "name": "Total PV Energy",
+            "unique_id": "foxess_inv1_total_pv_energy",
+            "address": 32000,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "kWh",
+            "data_type": "uint32",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Today PV Energy",
+            "unique_id": "foxess_inv1_daily_pv_energy",
+            "address": 32002,
+            "slave": 247,
+            "unit_of_measurement": "kWh",
+            "data_type": "uint16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Total Battery Charge Energy",
+            "unique_id": "foxess_inv1_total_charge_energy",
+            "address": 32003,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "kWh",
+            "data_type": "uint32",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Today Battery Charge Energy",
+            "unique_id": "foxess_inv1_daily_charge_energy",
+            "address": 32005,
+            "slave": 247,
+            "unit_of_measurement": "kWh",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Total Battery Discharge Energy",
+            "unique_id": "foxess_inv1_total_discharge_energy",
+            "address": 32006,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "kWh",
+            "data_type": "uint32",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Today Battery Discharge Energy",
+            "unique_id": "foxess_inv1_daily_discharge_energy",
+            "address": 32008,
+            "slave": 247,
+            "unit_of_measurement": "kWh",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Total Meter Feed-in Energy",
+            "unique_id": "foxess_sm1_total_feedin_energy",
+            "address": 32009,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "kWh",
+            "data_type": "uint32",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Today Meter Feed-in Energy",
+            "unique_id": "foxess_sm1_daily_feedin_energy",
+            "address": 32011,
+            "slave": 247,
+            "unit_of_measurement": "kWh",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Total Meter Consumption Energy",
+            "unique_id": "foxess_sm1_total_consumption_energy",
+            "address": 32012,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "kWh",
+            "data_type": "uint32",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Today Meter Consumption Energy",
+            "unique_id": "foxess_sm1_daily_consumption_energy",
+            "address": 32014,
+            "slave": 247,
+            "unit_of_measurement": "kWh",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Total Meter Output Energy",
+            "unique_id": "foxess_sm1_total_output_energy",
+            "address": 32015,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "kWh",
+            "data_type": "uint32",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Today Meter Output Energy",
+            "unique_id": "foxess_sm1_daily_output_energy",
+            "address": 32017,
+            "slave": 247,
+            "unit_of_measurement": "kWh",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Total Meter Input Energy",
+            "unique_id": "foxess_sm1_total_input_energy",
+            "address": 32018,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "kWh",
+            "data_type": "uint32",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Today Meter Input Energy",
+            "unique_id": "foxess_sm1_daily_input_energy",
+            "address": 32020,
+            "slave": 247,
+            "unit_of_measurement": "kWh",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Total Inv Load Energy",
+            "unique_id": "foxess_inv1_total_load_energy",
+            "address": 32021,
+            "slave": 247,
+            "count": 2,
+            "unit_of_measurement": "kWh",
+            "data_type": "uint32",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        },
+        {
+            "name": "Today Inv Load Energy",
+            "unique_id": "foxess_inv1_daily_load_energy",
+            "address": 32023,
+            "slave": 247,
+            "unit_of_measurement": "kWh",
+            "data_type": "int16",
+            "scale": 0.1,
+            "precision": 1,
+            "scan_interval": 300,
+            "state_class": "total_increasing",
+            "input_type": "holding",
+            "device_class": "energy"
+        }
+    ]
+}

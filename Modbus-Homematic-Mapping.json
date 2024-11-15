@@ -1,0 +1,33 @@
+{
+    "CCU Address": "localhost",
+    "CCU Port": "8181",
+    "CCU User": "user",
+    "CCU Password": "password",
+    "Mappings": {
+        "foxess_inv1_pv1_power": "PV_MPPT1_Leistung",
+        "foxess_inv1_pv2_power": "PV_MPPT2_Leistung",
+        "foxess_inv1_fault1_code":"PV_Inverter_Error_1",
+        "foxess_inv1_fault2_code":"PV_Inverter_Error_2",
+        "foxess_inv1_fault3_code":"PV_Inverter_Error_3",
+        "foxess_inv1_fault4_code":"PV_Inverter_Error_4",
+        "foxess_inv1_fault5_code":"PV_Inverter_Error_5",
+        "foxess_inv1_fault6_code":"PV_Inverter_Error_6",
+        "foxess_inv1_fault7_code":"PV_Inverter_Error_7",
+        "foxess_inv1_fault8_code":"PV_Inverter_Error_8",
+        "foxess_inv1_bms_fault1_code":"PV_Battery_Error_1",
+        "foxess_inv1_bms_fault2_code":"PV_Battery_Error_2",
+        "foxess_inv1_bms_fault3_code":"PV_Battery_Error_3",
+        "foxess_inv1_bms_fault4_code":"PV_Battery_Error_4",
+        "foxess_inv1_bms_fault5_code":"PV_Battery_Error_5",
+        "foxess_inv1_bms_fault6_code":"PV_Battery_Error_6",
+        "foxess_inv1_inverter_temperature":"PV_Inverter_Temperature",
+        "foxess_inv1_battery_power":"PV_Battery_Power",
+        "foxess_inv1_battery_temperature":"PV_Battery_Temperature",
+        "foxess_inv1_battery_soc":"PV_Battery_SoC",
+        "foxess_inv1_battery_soh":"PV_Battery_SoH",
+        "foxess_inv1_state":"PV_Inverter_State",
+        "foxess_inv1_pv_power":"PV_Power",
+        "foxess_inv1_daily_pv_energy":"PV_Energie_Taeglich",
+        "foxess_sm1_daily_feedin_energy": "PV_Einspeisung_taeglich"
+    }
+}
