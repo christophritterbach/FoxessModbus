@@ -58,6 +58,11 @@
                             <td id="foxess_inv1_total_discharge_energy">Total</td>
                         </tr>
                         <tr>
+                            <td>Energieverbrauch</td>
+                            <td id="foxess_sm1_daily_load_energy">Daily</td>
+                            <td id="foxess_sm1_total_load_energy">Total</td>
+                        </tr>
+                        <tr>
                             <td>Eingespeiste Energie (Meter)</td>
                             <td id="foxess_sm1_daily_feedin_energy">Daily</td>
                             <td id="foxess_sm1_total_feedin_energy">Total</td>
@@ -84,6 +89,10 @@
     </div>
     <script>
         getDataFromServer()
+        leseHmipWertVomServer('homematic_daily_feedin_energy');
+        leseHmipWertVomServer('homematic_total_feedin_energy');
+        leseHmipWertVomServer('homematic_daily_consumption_energy');
+        leseHmipWertVomServer('homematic_total_consumption_energy');
         let timer = setInterval(function() {
             getDataFromServer();
             leseHmipWertVomServer('homematic_daily_feedin_energy');

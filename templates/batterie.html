@@ -27,7 +27,7 @@
         </li>
     </ul>
     <div class="container-fluid bg-primary text-center text-white">
-        <h1>Tages- und Gesamtübersicht</h1>
+        <h1>Batterieübersicht</h1>
         <button onclick="getDataFromServer()">Lese Daten</button>
     </div>
     <div class="container-fluid bg-secondary text-white">
@@ -46,6 +46,14 @@
                         <tr>
                             <td>Kapazität</td>
                             <td id="foxess_inv1_battery_capacity">Total</td>
+                        </tr>
+                        <tr>
+                            <td>Max Ladestrom</td>
+                            <td id="foxess_inv1_max_charge_current">Max Charge</td>
+                        </tr>
+                        <tr>
+                            <td>Max Entladestrom</td>
+                            <td id="foxess_inv1_max_discharge_current">Max Discharge</td>
                         </tr>
                     </tbody>
                 </table>
@@ -91,6 +99,69 @@
                             <td>Batterie Entladen</td>
                             <td id="foxess_inv1_daily_discharge_energy">Daily</td>
                             <td id="foxess_inv1_total_discharge_energy">Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-secondary text-white">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Geräte</h2>
+                <table class="table table-bordered">
+                    <thead thead class="thead-dark">
+                        <tr>
+                            <th>Gerät</th>
+                            <th>Seriennummer</th>
+                            <th>Firmware</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="foxess_bms_family_type">Batterie Master</td>
+                            <td id="foxess_bms_master_sn">SerNo</td>
+                            <td id="foxess_bat_master">FW Bat Master</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Slave 1</td>
+                            <td id="foxess_bms_slave_1_sn">SerNo</td>
+                            <td id="foxess_bat_slave_1">FW Bat Slave 1</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Slave 2</td>
+                            <td id="foxess_bms_slave_2_sn">SerNo</td>
+                            <td id="foxess_bat_slave_2">FW Bat Slave 2</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Slave 3</td>
+                            <td id="foxess_bms_slave_3_sn">SerNo</td>
+                            <td id="foxess_bat_slave_3">FW Bat Slave 3</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Slave 4</td>
+                            <td id="foxess_bms_slave_4_sn">SerNo</td>
+                            <td id="foxess_bat_slave_4">FW Bat Slave 4</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Slave 5</td>
+                            <td id="foxess_bms_slave_5_sn">SerNo</td>
+                            <td id="foxess_bat_slave_5">FW Bat Slave 5</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Slave 6</td>
+                            <td id="foxess_bms_slave_6_sn">SerNo</td>
+                            <td id="foxess_bat_slave_6">FW Bat Slave 6</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Slave 7</td>
+                            <td id="foxess_bms_slave_7_sn">SerNo</td>
+                            <td id="foxess_bat_slave_7">FW Bat Slave 7</td>
+                        </tr>
+                        <tr>
+                            <td>Batterie Slave 8</td>
+                            <td id="foxess_bms_slave_8_sn">SerNo</td>
+                            <td id="foxess_bat_slave_8">FW Bat Slave 8</td>
                         </tr>
                     </tbody>
                 </table>
