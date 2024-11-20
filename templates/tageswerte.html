@@ -44,43 +44,43 @@
                     <tbody>
                         <tr>
                             <td>PV-Energie</td>
-                            <td id="foxess_inv1_daily_pv_energy">Daily</td>
-                            <td id="foxess_inv1_total_pv_energy">Total</td>
+                            <td style="text-align:right" id="foxess_inv1_daily_pv_energy">Daily</td>
+                            <td style="text-align:right" id="foxess_inv1_total_pv_energy">Total</td>
                         </tr>
                         <tr>
                             <td>Batterie Laden</td>
-                            <td id="foxess_inv1_daily_charge_energy">Daily</td>
-                            <td id="foxess_inv1_total_charge_energy">Total</td>
+                            <td style="text-align:right" id="foxess_inv1_daily_charge_energy">Daily</td>
+                            <td style="text-align:right" id="foxess_inv1_total_charge_energy">Total</td>
                         </tr>
                         <tr>
                             <td>Batterie Entladen</td>
-                            <td id="foxess_inv1_daily_discharge_energy">Daily</td>
-                            <td id="foxess_inv1_total_discharge_energy">Total</td>
+                            <td style="text-align:right" id="foxess_inv1_daily_discharge_energy">Daily</td>
+                            <td style="text-align:right" id="foxess_inv1_total_discharge_energy">Total</td>
                         </tr>
                         <tr>
                             <td>Energieverbrauch</td>
-                            <td id="foxess_sm1_daily_load_energy">Daily</td>
-                            <td id="foxess_sm1_total_load_energy">Total</td>
+                            <td style="text-align:right" id="foxess_inv1_daily_load_energy">Daily</td>
+                            <td style="text-align:right" id="foxess_inv1_total_load_energy">Total</td>
                         </tr>
                         <tr>
                             <td>Eingespeiste Energie (Meter)</td>
-                            <td id="foxess_sm1_daily_feedin_energy">Daily</td>
-                            <td id="foxess_sm1_total_feedin_energy">Total</td>
+                            <td style="text-align:right" id="foxess_sm1_daily_feedin_energy">Daily</td>
+                            <td style="text-align:right" id="foxess_sm1_total_feedin_energy">Total</td>
                         </tr>
                         <tr>
                             <td>Bezogene Energie (Meter)</td>
-                            <td id="foxess_sm1_daily_consumption_energy">Daily</td>
-                            <td id="foxess_sm1_total_consumption_energy">Total</td>
+                            <td style="text-align:right" id="foxess_sm1_daily_consumption_energy">Daily</td>
+                            <td style="text-align:right" id="foxess_sm1_total_consumption_energy">Total</td>
                         </tr>
                         <tr>
                             <td>Eingespeiste Energie (Homematic)</td>
-                            <td id="homematic_daily_feedin_energy">Daily</td>
-                            <td id="homematic_total_feedin_energy">Total</td>
+                            <td style="text-align:right" id="homematic_daily_feedin_energy">Daily</td>
+                            <td style="text-align:right" id="homematic_total_feedin_energy">Total</td>
                         </tr>
                         <tr>
                             <td>Bezogene Energie (Homematic)</td>
-                            <td id="homematic_daily_consumption_energy">Daily</td>
-                            <td id="homematic_total_consumption_energy">Total</td>
+                            <td style="text-align:right" id="homematic_daily_consumption_energy">Daily</td>
+                            <td style="text-align:right" id="homematic_total_consumption_energy">Total</td>
                         </tr>
                     </tbody>
                 </table>
@@ -89,16 +89,8 @@
     </div>
     <script>
         getDataFromServer()
-        leseHmipWertVomServer('homematic_daily_feedin_energy');
-        leseHmipWertVomServer('homematic_total_feedin_energy');
-        leseHmipWertVomServer('homematic_daily_consumption_energy');
-        leseHmipWertVomServer('homematic_total_consumption_energy');
         let timer = setInterval(function() {
             getDataFromServer();
-            leseHmipWertVomServer('homematic_daily_feedin_energy');
-            leseHmipWertVomServer('homematic_total_feedin_energy');
-            leseHmipWertVomServer('homematic_daily_consumption_energy');
-            leseHmipWertVomServer('homematic_total_consumption_energy');
         }, 30000);
     </script>
 </body>
