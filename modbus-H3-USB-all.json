@@ -3,10 +3,10 @@
     "type": "serial",
     "port": "/dev/ttyUSB0",
     "method": "rtu",
-    "baudrate": 9600,
-    "bytesize": 8,
-    "stopbits": 1,
-    "parity": "N",
+    "baudrate": "${Baudrate}",
+    "bytesize": "${Bytesize}",
+    "stopbits": "${Stopbits}",
+    "parity": "${Parity}",
     "sensors": [
         {
             "name": "Inverter Model",

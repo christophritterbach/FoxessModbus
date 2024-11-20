@@ -24,17 +24,18 @@ class ModbusReader:
         log_formatter = logging.Formatter("%(asctime)s %(levelname)-5s %(module)s:%(lineno)s %(message)s")
         log_handler.setFormatter(log_formatter)
         log.addHandler(log_handler)
-        self._client = ModbusClient.ModbusSerialClient(
-            port,
-            framer=FramerType.RTU,
-            baudrate=baudrate,
-            bytesize=bytesize,
-            stopbits=stopbits,
-            parity=parity,
-            timeout=2,
-            # retries=3,
-            # handle_local_echo=False,
-        )
+        #self._client = ModbusClient.ModbusSerialClient(
+        #    port,
+        #    framer=FramerType.RTU,
+        #    baudrate=baudrate,
+        #    bytesize=bytesize,
+        #    stopbits=stopbits,
+        #    parity=parity,
+        #    timeout=2,
+        #    # retries=3,
+        #    # handle_local_echo=False,
+        #)
+        self._client = ModbusClient.ModbusTcpClient('127.0.0.1', port=5020, framer=FramerType.SOCKET)
         self._client.connect()
 
     def restart(self):

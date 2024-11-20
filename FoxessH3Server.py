@@ -1,3 +1,4 @@
+import os
 import sys
 import logging
 import getopt
@@ -7,22 +8,25 @@ import queue
 from configparser import ConfigParser
 import logging.handlers as Handlers
 from threading import Thread
-from FlaskServer import app
-from FlaskServer import werteSpeicher
+import env_substitution
+import FlaskServer
+#from FlaskServer import app
+#from FlaskServer import werteSpeicher
 from ModbusWorker import ModbusWorker
 from AnswerWorker import AnswerWorker
 from InquiryWorker import InquiryWorker
+from HomematicMapper import HomematicMapper
 from ModbusHomematicHandler import ModbusHomematicHandler
 import Constants
 
 def readConfigFileH3(configFile):
     with open(configFile, 'r', encoding='utf-8') as file:
         foxess_json_data = json.load(file)
-    port = foxess_json_data[Constants.PORT]
-    baudrate = foxess_json_data[Constants.BAUDRATE]
-    bytesize = foxess_json_data[Constants.BYTESIZE]
-    stopbits = foxess_json_data[Constants.STOPBITS]
-    parity = foxess_json_data[Constants.PARITY]
+    port = env_substitution.substitute_env_variables(foxess_json_data[Constants.PORT])
+    baudrate = env_substitution.substitute_env_variables(foxess_json_data[Constants.BAUDRATE])
+    bytesize = env_substitution.substitute_env_variables(foxess_json_data[Constants.BYTESIZE])
+    stopbits = env_substitution.substitute_env_variables(foxess_json_data[Constants.STOPBITS])
+    parity = env_substitution.substitute_env_variables(foxess_json_data[Constants.PARITY])
     if port and baudrate and bytesize and stopbits and parity:
         ## Iterate ofer all sensors
         sensors = dict()
@@ -90,6 +94,17 @@ if __name__ == '__main__':
     ## Get logging-Parameter
     logLevel={'NOTSET': logging.NOTSET, 'DEBUG' : logging.DEBUG, 'INFO' : logging.INFO, 'WARNING' : logging.WARNING, 'ERROR' : logging.ERROR, 'CRITICAL' : logging.CRITICAL}[config.get('Logging', 'Loglevel', fallback='INFO')]
     logMaxFileSize=config.getint('Logging', 'MaxFileSize', fallback=1024)
+    # Get CCU-Info
+    os.environ['CCU_Address'] = config.get('CCU', 'CCU_Address')
+    os.environ['CCU_Port'] = config.get('CCU', 'CCU_Port')
+    os.environ['CCU_User'] = config.get('CCU', 'CCU_User')
+    os.environ['CCU_Password'] = config.get('CCU', 'CCU_Password')
+    # Get Foxess-Info
+    os.environ['Port'] = config.get('Foxess', 'Port')
+    os.environ['Baudrate'] = config.get('Foxess', 'Baudrate')
+    os.environ['Bytesize'] = config.get('Foxess', 'Bytesize')
+    os.environ['Stopbits'] = config.get('Foxess', 'Stopbits')
+    os.environ['Parity'] = config.get('Foxess', 'Parity')
     
     ## Queues anlegen
     auftrags_queue = queue.Queue()
@@ -101,7 +116,7 @@ if __name__ == '__main__':
     modbusWorker.start()
     
     ## Answer Worker einrichten und starten
-    answerWorker = AnswerWorker(antwort_queue, werteSpeicher, logLevel, logMaxFileSize)
+    answerWorker = AnswerWorker(antwort_queue, FlaskServer.werteSpeicher, logLevel, logMaxFileSize)
     homematicHandler = ModbusHomematicHandler(config.get('Homematic', 'Mapping'))
     answerWorker.addHandler(homematicHandler)
     answerWorker.start()
@@ -110,8 +125,11 @@ if __name__ == '__main__':
     inquiryWorker = InquiryWorker(auftrags_queue, int(config.getint('Run', 'ScanInterval')), sensors, config.get('Run', 'StopFile'), logLevel, logMaxFileSize)
     inquiryWorker.start()
 
+    # Homematic Mapper
+    FlaskServer.homematicMapper = HomematicMapper(config.get('Homematic', 'Status'))
+
     # Webserver starten
-    flaskThread = Thread(target=lambda: app.run(host=config.get('Webserver', 'Address'), port=config.getint('Webserver', 'Port'), debug=True, use_reloader=False))
+    flaskThread = Thread(target=lambda: FlaskServer.app.run(host=config.get('Webserver', 'Address'), port=config.getint('Webserver', 'Port'), debug=True, use_reloader=False))
     flaskThread.setDaemon(True)
     flaskThread.start()
     

@@ -1,8 +1,8 @@
 {
-    "CCU Address": "localhost",
-    "CCU Port": "8181",
-    "CCU User": "user",
-    "CCU Password": "password",
+    "CCU Address": "${CCU_Address}",
+    "CCU Port": "${CCU_Port}",
+    "CCU User": "${CCU_User}",
+    "CCU Password": "${CCU_Password}",
     "Mappings": {
         "foxess_inv1_pv1_power": "PV_MPPT1_Leistung",
         "foxess_inv1_pv2_power": "PV_MPPT2_Leistung",
@@ -27,7 +27,16 @@
         "foxess_inv1_battery_soh":"PV_Battery_SoH",
         "foxess_inv1_state":"PV_Inverter_State",
         "foxess_inv1_pv_power":"PV_Power",
-        "foxess_inv1_daily_pv_energy":"PV_Energie_Taeglich",
-        "foxess_sm1_daily_feedin_energy": "PV_Einspeisung_taeglich"
-    }
-}
+        "foxess_inv1_total_pv_energy":"PV_Energie_total",
+        "foxess_inv1_daily_pv_energy":"PV_Energie_taeglich",
+        "foxess_sm1_daily_feedin_energy": "PV_Einspeisung_taeglich",
+        "foxess_sm1_total_feedin_energy": "PV_Einspeisung_total",
+        "foxess_sm1_daily_consumption_energy": "PV_Energieverbrauch_taeglich",
+        "foxess_sm1_total_consumption_energy": "PV_Energieverbrauch_total",
+        "foxess_inv1_daily_load_energy": "PV_Bezug_taeglich",
+        "foxess_inv1_total_load_energy": "PV_Bezug_total",
+        "foxess_inv1_total_charge_energy": "PV_Batterie_Ladeenergie_total",
+        "foxess_inv1_daily_charge_energy": "PV_Batterie_Ladeenergie_taeglich",
+        "foxess_inv1_total_discharge_energy": "PV_Batterie_Entladeenergie_total",
+        "foxess_inv1_daily_discharge_energy": "PV_Batterie_Entladeenergie_taeglich"
+    }}

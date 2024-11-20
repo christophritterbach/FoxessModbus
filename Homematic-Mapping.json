@@ -1,8 +1,8 @@
 {
-    "CCU Address": "localhost",
-    "CCU Port": "8181",
-    "CCU User": "user",
-    "CCU Password": "password",
+    "CCU Address": "${CCU_Address}",
+    "CCU Port": "${CCU_Port}",
+    "CCU User": "${CCU_User}",
+    "CCU Password": "${CCU_Password}",
     "Homematic Status": [
         {
             "unique_id": "strom_akt_leistung",
@@ -348,6 +348,54 @@
             "unique_id": "licht_keller",
             "name": "Treppenhaus Licht Keller",
             "address": "HmIP-RF.00259D89B072B1:14.STATE",
+            "values": [
+                {
+                    "value": "false",
+                    "meaning": "aus"
+                },
+                {
+                    "value": "true",
+                    "meaning": "an"
+                }
+            ],
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "licht_terrasse",
+            "name": "Licht Terrasse",
+            "address": "HmIP-RF.00085D89A3CD67:3.STATE",
+            "values": [
+                {
+                    "value": "false",
+                    "meaning": "aus"
+                },
+                {
+                    "value": "true",
+                    "meaning": "an"
+                }
+            ],
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "licht_garten_vorne",
+            "name": "Licht Garten vorne",
+            "address": "HmIP-RF.003160800011E6:8.STATE",
+            "values": [
+                {
+                    "value": "false",
+                    "meaning": "aus"
+                },
+                {
+                    "value": "true",
+                    "meaning": "an"
+                }
+            ],
+            "device_class": "DP"
+        },
+        {
+            "unique_id": "licht_garten_hinten",
+            "name": "Licht Garten hinten",
+            "address": "HmIP-RF.003160800011E6:4.STATE",
             "values": [
                 {
                     "value": "false",

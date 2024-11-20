@@ -1,19 +1,25 @@
 import abc
 import json
 import Constants
+import env_substitution
 from HomematicBasis import HomematicBasis
 
 class HomematicMapper:
 
     def __init__(self, configFile):
+        self._homematicBasis = None
+        self._devices = dict()
+        self.readConfig(configFile)
+
+    def readConfig(self, configFile):
         with open(configFile, 'r', encoding='utf-8') as file:
             configuration = json.load(file)
-            address = configuration[Constants.CCU_ADDRESS]
-            port = configuration[Constants.CCU_PORT]
-            user = configuration[Constants.CCU_USER]
-            password = configuration[Constants.CCU_PASSWORD]
-            self._homematicBasis = HomematicBasis (address, port, user, password)
-            self._devices = dict()
+            address = env_substitution.substitute_env_variables(configuration[Constants.CCU_ADDRESS])
+            port = env_substitution.substitute_env_variables(configuration[Constants.CCU_PORT])
+            user = env_substitution.substitute_env_variables(configuration[Constants.CCU_USER])
+            password = env_substitution.substitute_env_variables(configuration[Constants.CCU_PASSWORD])
+            if not self._homematicBasis:
+                self._homematicBasis = HomematicBasis (address, port, user, password)
             for device in configuration[Constants.CCU_HOMEMATIC_STATUS]:
                 key = device[Constants.UNIQUE_ID]
                 werte = dict()

@@ -4,18 +4,22 @@ import requests
 import json
 from datetime import datetime
 import xml.etree.ElementTree as ET
+import env_substitution
 import Constants
 
 from ModbusHandlerInterface import ModbusHandlerInterface
 
 class ModbusHomematicHandler(ModbusHandlerInterface):
     def __init__(self, configFile):
+        self.readConfig(configFile)
+
+    def readConfig(self, configFile):
         with open(configFile, 'r', encoding='utf-8') as file:
             configuration = json.load(file)
-            self._address = configuration[Constants.CCU_ADDRESS]
-            self._port = configuration[Constants.CCU_PORT]
-            user = configuration[Constants.CCU_USER]
-            password = configuration[Constants.CCU_PASSWORD]
+            self._address = env_substitution.substitute_env_variables(configuration[Constants.CCU_ADDRESS])
+            self._port = env_substitution.substitute_env_variables(configuration[Constants.CCU_PORT])
+            user = env_substitution.substitute_env_variables(configuration[Constants.CCU_USER])
+            password = env_substitution.substitute_env_variables(configuration[Constants.CCU_PASSWORD])
             self._authorization_header = 'Basic ' + base64.b64encode('{0}:{1}'.format(user, password).encode('ascii')).decode('ascii')
             self._mapping = configuration[Constants.CCU_MAPPINGS]
 

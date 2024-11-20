@@ -1,0 +1,8 @@
+# Die Logdateien #
+##################
+*.log
+
+# Testdateien #
+###############
+Foxess-Test.ini
+Modbus-Homematic-Mapping-Test.json

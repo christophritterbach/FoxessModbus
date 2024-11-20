@@ -7,17 +7,13 @@ import threading
 
 app = Flask('Foxess H3 Server')
 werteSpeicher = dict()
+homematicMapper = None
 
 ##  Seiten
 @app.route("/")
 def main():
     return render_template('alle_register.html')
 
-@app.route("/temp/<object_id>")
-def sendTemp(object_id):
-    temp = homematicBasis.getDPValue(object_id)
-    return json.dumps(temp, default=json_serializer)
-    
 @app.route("/PV")
 def pv_ansicht():
     return render_template('pv_ansicht.html')
@@ -29,6 +25,10 @@ def batterie_ansicht():
 @app.route("/TAG")
 def tag_ansicht():
     return render_template('tageswerte.html')
+
+@app.route("/HMIP")
+def hmip_ansicht():
+    return render_template('homematic.html')
 
 ### REST-Aufrufe
 def json_serializer(obj):
@@ -45,6 +45,11 @@ def sensorById(sensor_id):
         return json.dumps(werteSpeicher[sensor_id], default=json_serializer)
     else:
         return ''
+
+@app.route("/homematic/<object_id>")
+def sendHomematic(object_id):
+    temp = homematicMapper.doReadHomematic(object_id)
+    return json.dumps(temp, default=json_serializer)
 
 # Für Testaufrufe    
 def fuelle_wertespeicher():
