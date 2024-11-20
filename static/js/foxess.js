@@ -8,7 +8,7 @@ function getAllDataFromServer() {
                 if (sensor.hasOwnProperty('unit_of_measurement')) {
                     measurement = sensor.unit_of_measurement
                 }
-                document.getElementById("all_sensors").innerHTML += `<tr id="${sensor.unique_id}"><td>${sensor.name}</td><td>${sensor.value}</td><td>${measurement}</td></tr>
+                document.getElementById("all_sensors").innerHTML += `<tr id="${sensor.unique_id}"><td title="${sensor.unique_id}">${sensor.name}</td><td>${sensor.value}</td><td>${measurement}</td></tr>
 `;
             }
         });
@@ -46,7 +46,7 @@ function leseHmipWertVomServer(unique_id) {
             if (hmip.hasOwnProperty('unit_of_measurement')) {
                 measurement = hmip.unit_of_measurement
             }
-            if (hmip.hasOwnProperty('precision')) {
+            if (hmip.hasOwnProperty('precision') && hmip.precision > 0) {
                 precision=hmip.precision-1
                 wert=hmip.value.toFixed(precision)
             } else {
@@ -59,7 +59,12 @@ function leseHmipWertVomServer(unique_id) {
 function getDataFromServer() {
     var allElements = document.querySelectorAll('*[id]');
     for (let elem of allElements) {
-        leseWertVomServer(elem.id);
+        if (elem.id.startsWith('foxess')) {
+            leseWertVomServer(elem.id);
+        }
+        else if (elem.id.startsWith('homematic')) {
+            leseHmipWertVomServer(elem.id);
+        }
     }
 }
 
