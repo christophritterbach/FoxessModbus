@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Foxess H3 Register-Übersicht</title>
+    <title>Foxess H3 Tageswerte im Verlauf</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
@@ -20,33 +20,30 @@
             <a class="nav-link" href="TAG">Tageswerte</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="/">Alle Register</a>
+            <a class="nav-link" href="/">Alle Register</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="VERLAUF">Tageswerte im Verlauf</a>
+            <a class="nav-link active" href="VERLAUF">Tageswerte im Verlauf</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="HMIP">Homematic</a>
         </li>
     </ul>
     <div class="container-fluid bg-primary text-center text-white">
-        <h1>Register-Übersicht</h1>
-        <button onclick="getAllDataFromServer()">Lese Daten</button>
+        <h1>Tagesübersicht</h1>
+        <button onclick="getDailyDataFromServer()">Lese Daten</button>
     </div>
     <div class="container-fluid bg-secondary text-white">
         <table class="table table-striped">
             <thead class="thead-dark">
-                <tr><th>Name</th><th>Wert</th><th>Masseinheit</th></tr>
+                <tr><th>Datum</th><th>Name</th><th>Wert</th><th>Masseinheit</th></tr>
             </thead>
-            <tbody id="all_sensors">
+            <tbody id="all_daily_sensors">
             </tbody>
         </table>
     </div>
     <script>
-        getAllDataFromServer()
-        let timer = setInterval(function() {
-            getDataFromServer();
-        }, 30000);
+        getDailyDataFromServer()
     </script>
 </body>
 </html>

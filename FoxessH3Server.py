@@ -10,22 +10,21 @@ import logging.handlers as Handlers
 from threading import Thread
 import env_substitution
 import FlaskServer
-#from FlaskServer import app
-#from FlaskServer import werteSpeicher
 from ModbusWorker import ModbusWorker
 from AnswerWorker import AnswerWorker
 from InquiryWorker import InquiryWorker
 from HomematicMapper import HomematicMapper
 from ModbusHomematicHandler import ModbusHomematicHandler
+from ModbusDailyHandler import ModbusDailyHandler
 import Constants
 
 def readConfigFileH3(configFile):
     with open(configFile, 'r', encoding='utf-8') as file:
         foxess_json_data = json.load(file)
     port = env_substitution.substitute_env_variables(foxess_json_data[Constants.PORT])
-    baudrate = env_substitution.substitute_env_variables(foxess_json_data[Constants.BAUDRATE])
-    bytesize = env_substitution.substitute_env_variables(foxess_json_data[Constants.BYTESIZE])
-    stopbits = env_substitution.substitute_env_variables(foxess_json_data[Constants.STOPBITS])
+    baudrate = int(env_substitution.substitute_env_variables(foxess_json_data[Constants.BAUDRATE]))
+    bytesize = int(env_substitution.substitute_env_variables(foxess_json_data[Constants.BYTESIZE]))
+    stopbits = int(env_substitution.substitute_env_variables(foxess_json_data[Constants.STOPBITS]))
     parity = env_substitution.substitute_env_variables(foxess_json_data[Constants.PARITY])
     if port and baudrate and bytesize and stopbits and parity:
         ## Iterate ofer all sensors
@@ -33,8 +32,8 @@ def readConfigFileH3(configFile):
         for sensor in foxess_json_data[Constants.SENSORS]:
             key = sensor[Constants.UNIQUE_ID]
             werte = dict()
-            werte[Constants.SCALE] = 1
-            werte[Constants.PRECISION] = 1
+            werte[Constants.SCALE] = 0
+            werte[Constants.PRECISION] = 0
             werte[Constants.UNIT_OF_MEASUREMENT] = ''
             werte[Constants.DEVICE_CLASS] = ''
             werte[Constants.COUNT] = 1
@@ -116,9 +115,11 @@ if __name__ == '__main__':
     modbusWorker.start()
     
     ## Answer Worker einrichten und starten
-    answerWorker = AnswerWorker(antwort_queue, FlaskServer.werteSpeicher, logLevel, logMaxFileSize)
-    homematicHandler = ModbusHomematicHandler(config.get('Homematic', 'Mapping'))
+    answerWorker = AnswerWorker(antwort_queue, logLevel, logMaxFileSize)
+    homematicHandler = ModbusHomematicHandler(config.get('Handler', 'Homematic'))
     answerWorker.addHandler(homematicHandler)
+    dailyHandler = ModbusDailyHandler(config.get('Handler', 'Daily'))
+    answerWorker.addHandler(dailyHandler)
     answerWorker.start()
 
     # InquiriyWorker
@@ -127,6 +128,8 @@ if __name__ == '__main__':
 
     # Homematic Mapper
     FlaskServer.homematicMapper = HomematicMapper(config.get('Homematic', 'Status'))
+    FlaskServer.answerWorker = answerWorker
+    FlaskServer.dailyHandler = dailyHandler
 
     # Webserver starten
     flaskThread = Thread(target=lambda: FlaskServer.app.run(host=config.get('Webserver', 'Address'), port=config.getint('Webserver', 'Port'), debug=True, use_reloader=False))

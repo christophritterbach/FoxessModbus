@@ -45,5 +45,9 @@ CCU_MAPPINGS='Mappings'
 CCU_HOMEMATIC_STATUS='Homematic Status'
 DEVICE_CLASS_DATA_POINT = 'DP'
 
+### Dateiname
+DAILY_LIST_FILE='daily_list_filename'
+DAILY_LIST_ITEMS='saved_items'
+
 ### Message for STOP
 STOP='STOP'

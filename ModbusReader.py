@@ -13,29 +13,28 @@ class ModbusReader:
     _log = logging.getLogger(__name__)
     def __init__(self, port, baudrate, bytesize, stopbits, parity, loglevel=logging.INFO, log_maxbytesize=4*1024):
         self._log.setLevel(loglevel)
-        log_handler = logging.handlers.RotatingFileHandler('modbusReader.log', maxBytes=log_maxbytesize)
+        log_handler = logging.handlers.RotatingFileHandler('logging/modbusReader.log', maxBytes=log_maxbytesize)
         log_formatter = logging.Formatter("%(asctime)s %(levelname)-5s %(module)s:%(lineno)s %(message)s")
         log_handler.setFormatter(log_formatter)
         self._log.addHandler(log_handler)
 
         log = logging.getLogger('pymodbus.logging')
         log.setLevel(loglevel)
-        log_handler = logging.handlers.RotatingFileHandler('modbusClient.log', maxBytes=log_maxbytesize)
+        log_handler = logging.handlers.RotatingFileHandler('logging/modbusClient.log', maxBytes=log_maxbytesize)
         log_formatter = logging.Formatter("%(asctime)s %(levelname)-5s %(module)s:%(lineno)s %(message)s")
         log_handler.setFormatter(log_formatter)
         log.addHandler(log_handler)
-        #self._client = ModbusClient.ModbusSerialClient(
-        #    port,
-        #    framer=FramerType.RTU,
-        #    baudrate=baudrate,
-        #    bytesize=bytesize,
-        #    stopbits=stopbits,
-        #    parity=parity,
-        #    timeout=2,
-        #    # retries=3,
-        #    # handle_local_echo=False,
-        #)
-        self._client = ModbusClient.ModbusTcpClient('127.0.0.1', port=5020, framer=FramerType.SOCKET)
+        self._client = ModbusClient.ModbusSerialClient(
+            port,
+            framer=FramerType.RTU,
+            baudrate=baudrate,
+            bytesize=bytesize,
+            stopbits=stopbits,
+            parity=parity,
+            timeout=2,
+            # retries=3,
+            # handle_local_echo=False,
+        )
         self._client.connect()
 
     def restart(self):

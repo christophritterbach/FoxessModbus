@@ -10,12 +10,12 @@ import Constants
 
 class InquiryWorker(Thread):
     _log = logging.getLogger(__name__)
-    
+
     def __init__(self, anfrage_queue, scan_interval, sensors, ende_datei, loglevel=logging.INFO, log_maxbytesize=4*1024):
         Thread.__init__(self)
         ## eigenes Logging
         self._log.setLevel(loglevel)
-        log_handler = logging.handlers.RotatingFileHandler('inquiryWorker.log', maxBytes=log_maxbytesize)
+        log_handler = logging.handlers.RotatingFileHandler('logging/inquiryWorker.log', maxBytes=log_maxbytesize)
         log_formatter = logging.Formatter("%(asctime)s %(levelname)-5s %(module)s:%(lineno)s %(message)s")
         log_handler.setFormatter(log_formatter)
         self._log.addHandler(log_handler)
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                        Constants.STATE_CLASS: 'measurement',
                        Constants.DATA_TYPE: 'string',
                        Constants.INPUT_TYPE: 'holding'
-                     }, 
+                     },
                 'foxess_inv1_pv1_current' : { Constants.NAME: 'PV1-Current',
                        Constants.UNIQUE_ID: 'foxess_inv1_pv1_current',
                        Constants.SLAVE: 247,
@@ -120,8 +120,8 @@ if __name__ == '__main__':
                         ]
                 }
               }
-    
-    
+
+
     inquiryWorker = InquiryWorker(anfrageQueue, sensors)
     inquiryWorker.run()
     isRunning = True

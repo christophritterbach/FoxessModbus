@@ -14,7 +14,7 @@ class ModbusWorker(Thread):
         Thread.__init__(self)
         ## eigenes Logging
         self._log.setLevel(loglevel)
-        log_handler = logging.handlers.RotatingFileHandler('modbusWorker.log', maxBytes=log_maxbytesize)
+        log_handler = logging.handlers.RotatingFileHandler('logging/modbusWorker.log', maxBytes=log_maxbytesize)
         log_formatter = logging.Formatter("%(asctime)s %(levelname)-5s %(module)s:%(lineno)s %(message)s")
         log_handler.setFormatter(log_formatter)
         self._log.addHandler(log_handler)

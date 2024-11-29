@@ -23,6 +23,9 @@
             <a class="nav-link" href="/">Alle Register</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="VERLAUF">Tageswerte im Verlauf</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="HMIP">Homematic</a>
         </li>
     </ul>
@@ -37,31 +40,31 @@
                 <table class="table table-bordered">
                     <thead thead class="thead-dark">
                         <tr>
-                            <th>String</th>
-                            <th>Spannung</th>
-                            <th>Strom</th>
-                            <th>Leistung</th>
+                            <th style="text-align:left">String</th>
+                            <th style="text-align:left">Spannung</th>
+                            <th style="text-align:left">Strom</th>
+                            <th style="text-align:left">Leistung</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr align="right">
-                            <th>MPPT1</th>
-                            <td id="foxess_inv1_pv1_voltage">Spannung</td>
-                            <td id="foxess_inv1_pv1_current">Strom</td>
-                            <td id="foxess_inv1_pv1_power">Leistung</td>
+                        <tr>
+                            <th style="text-align:left">MPPT1</th>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_pv1_voltage">Spannung</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_pv1_current">Strom</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_pv1_power">Leistung</td>
                         </tr>
-                        <tr align="right">
-                            <th>MPPT2</th>
-                            <td id="foxess_inv1_pv2_voltage">Spannung</td>
-                            <td id="foxess_inv1_pv2_current">Strom</td>
-                            <td id="foxess_inv1_pv2_power">Leistung</td>
+                        <tr>
+                            <th style="text-align:left">MPPT2</th>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_pv2_voltage">Spannung</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_pv2_current">Strom</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_pv2_power">Leistung</td>
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr align="right">
-                            <th>Gesamt</th>
+                        <tr>
+                            <th style="text-align:left">Gesamt</th>
                             <td colspan=2></td>
-                            <td id="foxess_inv1_pv_power">Leistung</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_pv_power">Leistung</td>
                         </tr>
                     <tfoot>
                 </table>
@@ -71,38 +74,30 @@
                 <table class="table table-bordered">
                     <thead thead class="thead-dark">
                         <tr>
-                            <th>String</th>
+                            <th></th>
                             <th>Spannung</th>
                             <th>Strom</th>
                             <th>Leistung</th>
-                            <th>Leistung (gemessen)</th>
-                            <th>Frequenz</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr align="right">
-                            <th>L1</th>
-                            <td id="foxess_inv1_grid_voltage_R">Spannung</td>
-                            <td id="foxess_inv1_inv_current_R">Strom</td>
-                            <td id="foxess_inv1_inv_power_R">Leistung</td>
-                            <td id="foxess_meter1_power_r">Leistung (gemessen)</td>
-                            <td id="foxess_inv1_grid_frequency">Frequenz</td>
+                        <tr>
+                            <th style="text-align:left" th>L1</th>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_grid_voltage_R">Spannung</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_inv_current_R">Strom</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_inv_power_R">Leistung</td>
                         </tr>
-                        <tr align="right">
-                            <th>L2</th>
-                            <td id="foxess_inv1_grid_voltage_S">Spannung</td>
-                            <td id="foxess_inv1_inv_current_S">Strom</td>
-                            <td id="foxess_inv1_inv_power_S">Leistung</td>
-                            <td id="foxess_meter1_power_s">Leistung (gemessen)</td>
-                            <td id="foxess_inv1_grid_frequency_s">Frequenz</td>
+                        <tr>
+                            <th style="text-align:left" >L2</th>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_grid_voltage_S">Spannung</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_inv_current_S">Strom</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_inv_power_S">Leistung</td>
                         </tr>
-                        <tr align="right">
-                            <th>L3</th>
-                            <td id="foxess_inv1_grid_voltage_T">Spannung</td>
-                            <td id="foxess_inv1_inv_current_T">Strom</td>
-                            <td id="foxess_inv1_inv_power_T">Leistung</td>
-                            <td id="foxess_meter1_power_t">Leistung (gemessen)</td>
-                            <td id="foxess_inv1_grid_frequency_t">Frequenz</td>
+                        <tr>
+                            <th style="text-align:left" >L3</th>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_grid_voltage_T">Spannung</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_inv_current_T">Strom</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_inv_power_T">Leistung</td>
                         </tr>
                     </tbody>
                 </table>
@@ -123,19 +118,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td id="foxess_inv1_model">Modell</td>
-                            <td id="foxess_serial_no">SerNo</td>
-                            <td id="foxess_fw_master">FW Master</td>
+                            <td class="foxess" id="foxess_inv1_model">Modell</td>
+                            <td class="foxess" id="foxess_serial_no">SerNo</td>
+                            <td class="foxess" id="foxess_fw_master">FW Master</td>
                         </tr>
                         <tr>
-                            <td id="foxess_inv1_model">Slave</td>
+                            <td class="foxess" id="foxess_inv1_model">Slave</td>
                             <td></td>
-                            <td id="foxess_fw_slave">FW Save</td>
+                            <td class="foxess" id="foxess_fw_slave">FW Save</td>
                         </tr>
                         <tr>
                             <td>Firmware Manager</td>
                             <td></td>
-                            <td id="foxess_fw_mgr">FW Manager</td>
+                            <td class="foxess" id="foxess_fw_mgr">FW Manager</td>
                         </tr>
                         <tr>
                             <td>Modbus Protokol</td>
@@ -143,24 +138,24 @@
                             <td id="modbus_protocol_version">FW Manager</td>
                         </tr>
                         <tr>
-                            <td id="foxess_bms_family_type">Batterie Master</td>
-                            <td id="foxess_bms_master_sn">SerNo</td>
-                            <td id="foxess_bat_master">FW Bat Master</td>
+                            <td class="foxess" id="foxess_bms_family_type">Batterie Master</td>
+                            <td class="foxess" id="foxess_bms_master_sn">SerNo</td>
+                            <td class="foxess" id="foxess_bat_master">FW Bat Master</td>
                         </tr>
                         <tr>
                             <td>Batterie Slave 1</td>
-                            <td id="foxess_bms_slave_1_sn">SerNo</td>
-                            <td id="foxess_bat_slave_1">FW Bat Slave 1</td>
+                            <td class="foxess" id="foxess_bms_slave_1_sn">SerNo</td>
+                            <td class="foxess" id="foxess_bat_slave_1">FW Bat Slave 1</td>
                         </tr>
                         <tr>
                             <td>Batterie Slave 2</td>
-                            <td id="foxess_bms_slave_2_sn">SerNo</td>
-                            <td id="foxess_bat_slave_2">FW Bat Slave 2</td>
+                            <td class="foxess" id="foxess_bms_slave_2_sn">SerNo</td>
+                            <td class="foxess" id="foxess_bat_slave_2">FW Bat Slave 2</td>
                         </tr>
                         <tr>
                             <td>Batterie Slave 3</td>
-                            <td id="foxess_bms_slave_3_sn">SerNo</td>
-                            <td id="foxess_bat_slave_3">FW Bat Slave 3</td>
+                            <td class="foxess" id="foxess_bms_slave_3_sn">SerNo</td>
+                            <td class="foxess" id="foxess_bat_slave_3">FW Bat Slave 3</td>
                         </tr>
                     </tbody>
                 </table>

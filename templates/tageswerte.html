@@ -23,6 +23,9 @@
             <a class="nav-link" href="/">Alle Register</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="VERLAUF">Tageswerte im Verlauf</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="HMIP">Homematic</a>
         </li>
     </ul>
@@ -33,54 +36,69 @@
     <div class="container-fluid bg-secondary text-white">
         <div class="row">
             <div class="col-sm-12">
+                <h2>PV-Anlage</h2>
                 <table class="table table-bordered">
                     <thead thead class="thead-dark">
                         <tr>
                             <th></th>
-                            <th>Tageswert</th>
-                            <th>Gesamtwert</th>
+                            <th style="text-align:left">Tageswert</th>
+                            <th style="text-align:left">Gesamtwert</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>PV-Energie</td>
-                            <td style="text-align:right" id="foxess_inv1_daily_pv_energy">Daily</td>
-                            <td style="text-align:right" id="foxess_inv1_total_pv_energy">Total</td>
+                            <th style="text-align:left">PV-Energie</th>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_daily_pv_energy">Daily</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_total_pv_energy">Total</td>
                         </tr>
                         <tr>
-                            <td>Batterie Laden</td>
-                            <td style="text-align:right" id="foxess_inv1_daily_charge_energy">Daily</td>
-                            <td style="text-align:right" id="foxess_inv1_total_charge_energy">Total</td>
+                            <th style="text-align:left">Batterie Laden</th>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_daily_charge_energy">Daily</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_total_charge_energy">Total</td>
                         </tr>
                         <tr>
-                            <td>Batterie Entladen</td>
-                            <td style="text-align:right" id="foxess_inv1_daily_discharge_energy">Daily</td>
-                            <td style="text-align:right" id="foxess_inv1_total_discharge_energy">Total</td>
+                            <th style="text-align:left">Batterie Entladen</th>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_daily_discharge_energy">Daily</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_total_discharge_energy">Total</td>
                         </tr>
                         <tr>
-                            <td>Energieverbrauch</td>
-                            <td style="text-align:right" id="foxess_inv1_daily_load_energy">Daily</td>
-                            <td style="text-align:right" id="foxess_inv1_total_load_energy">Total</td>
+                            <th style="text-align:left">Energieverbrauch</th>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_daily_load_energy">Daily</td>
+                            <td style="text-align:right" class="foxess" id="foxess_inv1_total_load_energy">Total</td>
                         </tr>
                         <tr>
-                            <td>Eingespeiste Energie (Meter)</td>
-                            <td style="text-align:right" id="foxess_sm1_daily_feedin_energy">Daily</td>
-                            <td style="text-align:right" id="foxess_sm1_total_feedin_energy">Total</td>
+                            <th style="text-align:left">Eingespeiste Energie (Meter)</th>
+                            <td style="text-align:right" class="foxess" id="foxess_sm1_daily_feedin_energy">Daily</td>
+                            <td style="text-align:right" class="foxess" id="foxess_sm1_total_feedin_energy">Total</td>
                         </tr>
                         <tr>
-                            <td>Bezogene Energie (Meter)</td>
-                            <td style="text-align:right" id="foxess_sm1_daily_consumption_energy">Daily</td>
-                            <td style="text-align:right" id="foxess_sm1_total_consumption_energy">Total</td>
+                            <th style="text-align:left">Bezogene Energie (Meter)</th>
+                            <td style="text-align:right" class="foxess" id="foxess_sm1_daily_consumption_energy">Daily</td>
+                            <td style="text-align:right" class="foxess" id="foxess_sm1_total_consumption_energy">Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-12">
+                <h2>Stromzähler</h2>
+                <table class="table table-bordered">
+                    <thead thead class="thead-dark">
+                        <tr>
+                            <th></th>
+                            <th style="text-align:left">Tageswert</th>
+                            <th style="text-align:left">Gesamtwert</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th style="text-align:left">Eingespeiste Energie</th>
+                            <td style="text-align:right" class="homematic" id="homematic_daily_feedin_energy">Daily</td>
+                            <td style="text-align:right" class="homematic" id="homematic_total_feedin_energy">Total</td>
                         </tr>
                         <tr>
-                            <td>Eingespeiste Energie (Homematic)</td>
-                            <td style="text-align:right" id="homematic_daily_feedin_energy">Daily</td>
-                            <td style="text-align:right" id="homematic_total_feedin_energy">Total</td>
-                        </tr>
-                        <tr>
-                            <td>Bezogene Energie (Homematic)</td>
-                            <td style="text-align:right" id="homematic_daily_consumption_energy">Daily</td>
-                            <td style="text-align:right" id="homematic_total_consumption_energy">Total</td>
+                            <th style="text-align:left">Bezogene Energie</th>
+                            <td style="text-align:right" class="homematic" id="homematic_daily_consumption_energy">Daily</td>
+                            <td style="text-align:right" class="homematic" id="homematic_total_consumption_energy">Total</td>
                         </tr>
                     </tbody>
                 </table>

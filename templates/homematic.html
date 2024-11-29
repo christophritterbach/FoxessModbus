@@ -23,6 +23,9 @@
             <a class="nav-link" href="/">Alle Register</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="VERLAUF">Tageswerte im Verlauf</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link active" href="HMIP">Homematic</a>
         </li>
     </ul>
@@ -37,7 +40,7 @@
                 <table class="table table-bordered">
                     <thead thead class="thead-dark">
                         <tr>
-                            <th>Gerät</th>
+                            <th></th>
                             <th>Ist Wert</th>
                             <th>Soll Wert</th>
                             <th>Luftfeuchtigkeit</th>
@@ -45,62 +48,62 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Wohnzimmer</td>
-                            <td id="temp_ist_eg_wohnzimmer">IST</td>
-                            <td id="temp_soll_eg_wohnzimmer">SOLL</td>
-                            <td id="feuchte_eg_wohnzimmer">Feuchte</td>
+                            <th>Wohnzimmer</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_eg_wohnzimmer">IST</td>
+                            <td style="text-align:right" class="homematic" id="temp_soll_eg_wohnzimmer">SOLL</td>
+                            <td style="text-align:right" class="homematic" id="feuchte_eg_wohnzimmer">Feuchte</td>
                         </tr>
                         <tr>
-                            <td>Küche</td>
-                            <td id="temp_ist_eg_kueche">IST</td>
-                            <td id="temp_soll_eg_kueche">SOLL</td>
-                            <td id="feuchte_eg_kueche">Feuchte</td>
+                            <th>Küche</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_eg_kueche">IST</td>
+                            <td style="text-align:right" class="homematic" id="temp_soll_eg_kueche">SOLL</td>
+                            <td style="text-align:right" class="homematic" id="feuchte_eg_kueche">Feuchte</td>
                         </tr>
                         <tr>
-                            <td>Treppenhaus</td>
-                            <td id="temp_ist_eg_treppe">IST</td>
-                            <td id="temp_soll_eg_treppe">SOLL</td>
-                            <td id="feuchte_eg_treppe">Feuchte</td>
+                            <th>Treppenhaus</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_eg_treppe">IST</td>
+                            <td style="text-align:right" class="homematic" id="temp_soll_eg_treppe">SOLL</td>
+                            <td style="text-align:right" class="homematic" id="feuchte_eg_treppe">Feuchte</td>
                         </tr>
                         <tr>
-                            <td>Schlafzimmer</td>
-                            <td id="temp_ist_og_schlafzimmer">IST</td>
-                            <td id="temp_soll_og_schlafzimmer">SOLL</td>
-                            <td id="feuchte_og_schlafzimmer">Feuchte</td>
+                            <th>Schlafzimmer</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_og_schlafzimmer">IST</td>
+                            <td style="text-align:right" class="homematic" id="temp_soll_og_schlafzimmer">SOLL</td>
+                            <td style="text-align:right" class="homematic" id="feuchte_og_schlafzimmer">Feuchte</td>
                         </tr>
                         <tr>
-                            <td>Kinderzimmer</td>
-                            <td id="temp_ist_og_kinderzimmer">IST</td>
-                            <td id="temp_soll_og_kinderzimmer">SOLL</td>
-                            <td id="feuchte_og_kinderzimmer">Feuchte</td>
+                            <th>Kinderzimmer</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_og_kinderzimmer">IST</td>
+                            <td style="text-align:right" class="homematic" id="temp_soll_og_kinderzimmer">SOLL</td>
+                            <td style="text-align:right" class="homematic" id="feuchte_og_kinderzimmer">Feuchte</td>
                         </tr>
                         <tr>
-                            <td>Badezimmer</td>
-                            <td id="temp_ist_og_badezimmer">IST</td>
-                            <td id="temp_soll_og_badezimmer">SOLL</td>
-                            <td id="feuchte_og_badezimmer">Feuchte</td>
+                            <th>Badezimmer</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_og_badezimmer">IST</td>
+                            <td style="text-align:right" class="homematic" id="temp_soll_og_badezimmer">SOLL</td>
+                            <td style="text-align:right" class="homematic" id="feuchte_og_badezimmer">Feuchte</td>
                         </tr>
                         <tr>
-                            <td>Badezimmer Handtuchhalter</td>
-                            <td id="temp_ist_og_badezimmer_h">IST</td>
+                            <th>Badezimmer Handtuchhalter</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_og_badezimmer_h">IST</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Büro groß Süd</td>
-                            <td id="temp_ist_dg_buero_g_s">IST</td>
+                            <th>Büro groß Süd</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_dg_buero_g_s">IST</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Büro groß Nord</td>
-                            <td id="temp_ist_dg_buero_g_n">IST</td>
+                            <th>Büro groß Nord</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_dg_buero_g_n">IST</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Büro klein</td>
-                            <td id="temp_ist_dg_buero_k_n">IST</td>
+                            <th>Büro klein</th>
+                            <td style="text-align:right" class="homematic" id="temp_ist_dg_buero_k_n">IST</td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -112,34 +115,34 @@
                 <table class="table table-bordered">
                     <thead thead class="thead-dark">
                         <tr>
-                            <th>Gerät</th>
+                            <th></th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Treppenhaus Keller</td>
-                            <td id="licht_keller">IST</td>
+                            <th>Treppenhaus Keller</th>
+                            <td style="text-align:left" class="homematic" id="licht_keller">IST</td>
                         </tr>
                         <tr>
-                            <td>Treppenhaus Erdgeschoß</td>
-                            <td id="licht_eg">IST</td>
+                            <th>Treppenhaus Erdgeschoß</th>
+                            <td style="text-align:left" class="homematic" id="licht_eg">IST</td>
                         </tr>
                         <tr>
-                            <td>Treppenhaus Obergeschoß</td>
-                            <td id="licht_og">IST</td>
+                            <th>Treppenhaus Obergeschoß</th>
+                            <td style="text-align:left" class="homematic" id="licht_og">IST</td>
                         </tr>
                         <tr>
-                            <td>Terrassenlicht</td>
-                            <td id="licht_terrasse">IST</td>
+                            <th>Terrassenlicht</th>
+                            <td style="text-align:left" class="homematic" id="licht_terrasse">IST</td>
                         </tr>
                         <tr>
-                            <td>Gartenlicht vorne</td>
-                            <td id="licht_garten_vorne">IST</td>
+                            <th>Gartenlicht vorne</th>
+                            <td style="text-align:left" class="homematic" id="licht_garten_vorne">IST</td>
                         </tr>
                         <tr>
-                            <td>Gartenlicht hinten</td>
-                            <td id="licht_garten_hinten">IST</td>
+                            <th>Gartenlicht hinten</th>
+                            <td style="text-align:left" class="homematic" id="licht_garten_hinten">IST</td>
                         </tr>
                     </tbody>
                 </table>
@@ -149,22 +152,22 @@
                 <table class="table table-bordered">
                     <thead thead class="thead-dark">
                         <tr>
-                            <th>Gerät</th>
+                            <th></th>
                             <th>geöffnet</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Südfenster West</td>
-                            <td id="rollade_dg_suedfenster_w">IST</td>
+                            <th>Südfenster West</th>
+                            <td style="text-align:right" class="homematic" id="rollade_dg_suedfenster_w">IST</td>
                         </tr>
                         <tr>
-                            <td>Südfenster Ost</td>
-                            <td id="rollade_dg_suedfenster_o">IST</td>
+                            <th>Südfenster Ost</th>
+                            <td style="text-align:right" class="homematic" id="rollade_dg_suedfenster_o">IST</td>
                         </tr>
                         <tr>
-                            <td>Seitenfenster</td>
-                            <td id="rollade_dg_seitenfenster">IST</td>
+                            <th>Seitenfenster</th>
+                            <td style="text-align:right" class="homematic" id="rollade_dg_seitenfenster">IST</td>
                         </tr>
                     </tbody>
                 </table>
@@ -174,22 +177,22 @@
                 <table class="table table-bordered">
                     <thead thead class="thead-dark">
                         <tr>
-                            <th>Gerät</th>
+                            <th></th>
                             <th>geöffnet</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>WC Fenster</td>
-                            <td id="wc_fenster">IST</td>
+                            <th>WC Fenster</th>
+                            <td style="text-align:left" class="homematic" id="wc_fenster">IST</td>
                         </tr>
                         <tr>
-                            <td>Garagentor</td>
-                            <td id="garagentor">IST</td>
+                            <th>Garagentor</th>
+                            <td style="text-align:left" class="homematic" id="garagentor">IST</td>
                         </tr>
                         <tr>
-                            <td>Mess-Steckdose</td>
-                            <td id="mess_steckdose">IST</td>
+                            <th>Mess-Steckdose</th>
+                            <td style="text-align:left" class="homematic" id="mess_steckdose">IST</td>
                         </tr>
                     </tbody>
                 </table>
@@ -199,16 +202,16 @@
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
-                            <td>Aktuelle Leistung</td>
-                            <td id="strom_akt_leistung">IST</td>
+                            <th>Aktuelle Leistung</th>
+                            <td style="text-align:right" class="homematic" id="strom_akt_leistung">IST</td>
                         </tr>
                         <tr>
-                            <td>Bezug total</td>
-                            <td id="strom_bezug_total">IST</td>
+                            <th>Bezug total</th>
+                            <td style="text-align:right" class="homematic" id="strom_bezug_total">IST</td>
                         </tr>
                         <tr>
-                            <td>Einspeisung total</td>
-                            <td id="strom_einspeisung_total">IST</td>
+                            <th>Einspeisung total</th>
+                            <td style="text-align:right" class="homematic" id="strom_einspeisung_total">IST</td>
                         </tr>
                     </tbody>
                 </table>
@@ -216,7 +219,7 @@
         </div>
     </div>
     <script>
-        getHmipDataFromServer()
+        getDataFromServer()
     </script>
 </body>
 </html>

@@ -10,19 +10,19 @@ import Constants
 class AnswerWorker(Thread):
     _log = logging.getLogger(__name__)
     _handlers = []
-    
-    def __init__(self, antwort_queue, daten_speicher, loglevel=logging.INFO, log_maxbytesize=4*1024):
+
+    def __init__(self, antwort_queue, loglevel=logging.INFO, log_maxbytesize=4*1024):
         Thread.__init__(self)
         ## eigenes Logging
         self._log.setLevel(loglevel)
-        log_handler = logging.handlers.RotatingFileHandler('answerWorker.log', maxBytes=log_maxbytesize)
+        log_handler = logging.handlers.RotatingFileHandler('logging/answerWorker.log', maxBytes=log_maxbytesize)
         log_formatter = logging.Formatter("%(asctime)s %(levelname)-5s %(module)s:%(lineno)s %(message)s")
         log_handler.setFormatter(log_formatter)
         self._log.addHandler(log_handler)
         ## Queues merken
         self._antwortQueue = antwort_queue
         ## Datenspeicher (DICT) ablegen
-        self._datenSpeicher = daten_speicher
+        self._datenSpeicher = dict()
         self._log.info('AnswerWorker initiated')
 
     def addHandler(self, handler):
@@ -72,9 +72,20 @@ class AnswerWorker(Thread):
                 if doHandleItem:
                     for handler in self._handlers:
                         handler.doHandleItem(item)
-                    
+
             self._antwortQueue.task_done()
 
+    def readDatenspeicher(self, uniqueId=None):
+        if self._datenSpeicher:
+            if uniqueId:
+                if uniqueId in self._datenSpeicher.keys():
+                    return self._datenSpeicher[uniqueId]
+                else:
+                    return None
+            else:
+                return self._datenSpeicher
+        else:
+            return None
 
 if __name__ == '__main__':
     antwortQueue = Queue()
@@ -83,8 +94,8 @@ if __name__ == '__main__':
     configurations_datei_Homematic = './Modbus-Homematic-Mapping.json'
     homematicHandler = ModbusHomematicHandler(configurations_datei_Homematic)
     answerWorker.addHandler(homematicHandler)
-    
-    
+
+
     antwortQueue.put({ Constants.NAME: 'Inverter Model',
                        Constants.UNIQUE_ID: 'foxess_inv1_model',
                        Constants.SCAN_INTERVAL: 600,
@@ -111,7 +122,7 @@ if __name__ == '__main__':
                        Constants.INPUT_TYPE: 'holding',
                        Constants.DEVICE_CLASS: 'power',
                        Constants.VALUE: 30,
-                       Constants.TIMESTAMP: datetime.now()                     
+                       Constants.TIMESTAMP: datetime.now()
                      })
     antwortQueue.put({ Constants.NAME: 'Firmware Battery Slave 1',
                        Constants.UNIQUE_ID: 'foxess_bat_slave_1',
@@ -124,7 +135,7 @@ if __name__ == '__main__':
                        Constants.DEVICE_CLASS: 'power',
                        Constants.VALUE: 4117,
                        Constants.DEVICE_CLASS: 'battery_version',
-                       Constants.TIMESTAMP: datetime.now()                     
+                       Constants.TIMESTAMP: datetime.now()
                      })
     import time
     time.sleep(2)
@@ -141,10 +152,10 @@ if __name__ == '__main__':
                        Constants.INPUT_TYPE: 'holding',
                        Constants.DEVICE_CLASS: 'power',
                        Constants.VALUE: 35,
-                       Constants.TIMESTAMP: datetime.now()                     
+                       Constants.TIMESTAMP: datetime.now()
                      })
     antwortQueue.put(Constants.STOP)
-    
+
     answerWorker.run()
 
     print ('Im Speicher ist')
@@ -165,8 +176,8 @@ if __name__ == '__main__':
     def json_serializer(obj):
         if isinstance(obj, (datetime)):
             return obj.strftime("%m.%d.%Y %H:%M:%S")
-            
-    
+
+
     print(json.dumps(liste, default=json_serializer))
     print('------------------')
     #print(speicher.values())

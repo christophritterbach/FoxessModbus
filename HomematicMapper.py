@@ -1,17 +1,26 @@
 import abc
 import json
+import logging
+import logging.handlers
 import Constants
 import env_substitution
 from HomematicBasis import HomematicBasis
 
 class HomematicMapper:
+    _log = logging.getLogger(__name__)
 
-    def __init__(self, configFile):
+    def __init__(self, configFile, loglevel=logging.INFO, log_maxbytesize=4*1024):
+        self._log.setLevel(loglevel)
+        log_handler = logging.handlers.RotatingFileHandler('logging/homeamticMapper.log', maxBytes=log_maxbytesize)
+        log_formatter = logging.Formatter("%(asctime)s %(levelname)-5s %(module)s:%(lineno)s %(message)s")
+        log_handler.setFormatter(log_formatter)
+        self._log.addHandler(log_handler)
         self._homematicBasis = None
         self._devices = dict()
         self.readConfig(configFile)
 
     def readConfig(self, configFile):
+        self._log.info(f'readConfig({configFile})')
         with open(configFile, 'r', encoding='utf-8') as file:
             configuration = json.load(file)
             address = env_substitution.substitute_env_variables(configuration[Constants.CCU_ADDRESS])
@@ -22,6 +31,7 @@ class HomematicMapper:
                 self._homematicBasis = HomematicBasis (address, port, user, password)
             for device in configuration[Constants.CCU_HOMEMATIC_STATUS]:
                 key = device[Constants.UNIQUE_ID]
+                self._log.info(f'device = {device[Constants.UNIQUE_ID]}')
                 werte = dict()
                 werte[Constants.UNIT_OF_MEASUREMENT] = ''
                 for s_key in [Constants.NAME, Constants.UNIQUE_ID, Constants.ADDRESS, Constants.DATA_TYPE, Constants.SCALE, Constants.PRECISION, Constants.UNIT_OF_MEASUREMENT, Constants.DEVICE_CLASS, Constants.VALUES]:

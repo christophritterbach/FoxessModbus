@@ -1,7 +1,7 @@
 {
     "name": "HA-FoxESS-H3-Modbus-USB",
     "type": "serial",
-    "port": "/dev/ttyUSB0",
+    "port": "${Port}",
     "method": "rtu",
     "baudrate": "${Baudrate}",
     "bytesize": "${Bytesize}",
